@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prashakha Bhardwaj — Senior UI/UX Designer</title>
+<meta name="description" content="Portfolio of Prashakha Bhardwaj, Senior UI/UX Designer specializing in Enterprise SaaS, OTT platforms, and complex admin systems.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#12141c;
+    --paper:#faf8f3;
+    --paper-dim:#f1eee5;
+    --line:#e2ddd0;
+    --coral:#ff5a44;
+    --coral-dim:#ffe4de;
+    --navy:#1c2333;
+    --muted:#6b6f7a;
+    --white:#ffffff;
+    --radius:18px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter',sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.serif{font-family:'Fraunces',serif;}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 32px;}
+  section{padding:110px 0;}
+  @media (max-width:768px){section{padding:70px 0;} .wrap{padding:0 22px;}}
+  /* NAV */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    background:rgba(250,248,243,0.85);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  nav.wrap{
+    display:flex;align-items:center;justify-content:space-between;
+    padding-top:18px;padding-bottom:18px;
+  }
+  .logo{font-family:'Fraunces',serif;font-weight:600;font-size:19px;letter-spacing:-0.02em;}
+  .nav-links{display:flex;gap:34px;font-size:14px;font-weight:500;}
+  .nav-links a{color:var(--muted);transition:color .2s;}
+  .nav-links a:hover{color:var(--ink);}
+  .nav-cta{
+    background:var(--ink);color:var(--paper);padding:10px 20px;border-radius:999px;
+    font-size:13px;font-weight:600;
+  }
+  .nav-toggle{display:none;}
+  @media (max-width:768px){
+    .nav-links{display:none;}
+  }
+  /* HERO */
+  .hero{padding-top:190px;padding-bottom:90px;position:relative;overflow:hidden;}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;
+    color:var(--coral);margin-bottom:22px;
+  }
+  .eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--coral);}
+  .hero h1{
+    font-size:clamp(38px,6vw,72px);
+    font-weight:500;
+    letter-spacing:-0.02em;
+    max-width:920px;
+    line-height:1.08;
+  }
+  .hero h1 em{font-style:italic;color:var(--coral);}
+  .hero-sub{
+    max-width:620px;font-size:18px;color:var(--muted);margin-top:26px;
+  }
+  .hero-actions{display:flex;gap:14px;margin-top:38px;flex-wrap:wrap;}
+  .btn{
+    padding:14px 26px;border-radius:999px;font-weight:600;font-size:14px;
+    display:inline-flex;align-items:center;gap:8px;transition:transform .15s, box-shadow .15s;
+  }
+  .btn-primary{background:var(--ink);color:var(--paper);}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(18,20,28,.18);}
+  .btn-outline{border:1.5px solid var(--line);}
+  .btn-outline:hover{border-color:var(--ink);transform:translateY(-2px);}
+  .hero-meta{
+    display:flex;gap:40px;margin-top:64px;flex-wrap:wrap;padding-top:36px;border-top:1px solid var(--line);
+  }
+  .hero-meta div b{display:block;font-family:'Fraunces',serif;font-size:26px;font-weight:500;}
+  .hero-meta div span{font-size:13px;color:var(--muted);}
+  /* SECTION HEADS */
+  .section-head{max-width:640px;margin-bottom:56px;}
+  .kicker{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--coral);margin-bottom:14px;}
+  .section-head h2{font-size:clamp(28px,4vw,42px);font-weight:500;letter-spacing:-0.01em;}
+  .section-head p{color:var(--muted);margin-top:14px;font-size:16px;}
+  /* ABOUT */
+  .about{background:var(--white);}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;}
+  @media (max-width:768px){.about-grid{grid-template-columns:1fr;}}
+  .about-grid p{font-size:17px;color:#33374a;margin-bottom:18px;}
+  .pillars{display:flex;flex-direction:column;gap:22px;}
+  .pillar{display:flex;gap:16px;padding:20px;border:1px solid var(--line);border-radius:14px;}
+  .pillar .num{font-family:'Fraunces',serif;font-size:20px;color:var(--coral);}
+  .pillar h4{font-size:15px;margin-bottom:4px;}
+  .pillar p{font-size:14px;color:var(--muted);margin:0;}
+  /* WORK CARDS */
+  .work-grid{display:flex;flex-direction:column;gap:24px;}
+  .work-card{
+    display:grid;grid-template-columns:1.1fr 1fr;gap:0;
+    border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
+    background:var(--white);transition:box-shadow .25s, transform .25s;
+  }
+  .work-card:hover{box-shadow:0 20px 50px rgba(18,20,28,.10);transform:translateY(-3px);}
+  .work-visual{
+    position:relative;min-height:260px;display:flex;align-items:center;justify-content:center;
+    color:var(--white);padding:32px;
+  }
+  .work-visual span.tag{
+    position:absolute;top:20px;left:20px;background:rgba(255,255,255,.18);
+    padding:6px 14px;border-radius:999px;font-size:12px;font-weight:600;letter-spacing:.03em;
+  }
+  .work-visual h3{font-size:26px;font-weight:500;text-align:left;align-self:flex-end;width:100%;}
+  .wv-1{background:linear-gradient(135deg,#1c2333,#3a4667);}
+  .wv-2{background:linear-gradient(135deg,#3a2a2a,#8a4b3a);}
+  .wv-3{background:linear-gradient(135deg,#2a3a33,#3f6b57);}
+  .wv-featured{background:linear-gradient(135deg,#6952f0,#241a5e);}
+  .work-body{padding:32px;display:flex;flex-direction:column;justify-content:center;}
+  .work-body .meta{font-size:12px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--coral);margin-bottom:10px;}
+  .work-body p{color:var(--muted);font-size:15px;margin-bottom:18px;}
+  .chip-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;}
+  .chip{background:var(--paper-dim);border:1px solid var(--line);font-size:12px;padding:5px 11px;border-radius:999px;color:#444;}
+  .work-link{font-weight:600;font-size:14px;display:inline-flex;align-items:center;gap:6px;}
+  .work-link:hover{color:var(--coral);}
+  @media (max-width:768px){.work-card{grid-template-columns:1fr;}}
+  /* DEEP DIVE CALLOUT */
+  .deep-dive{
+    background:linear-gradient(135deg,#6952f0,#241a5e);border-radius:18px;padding:36px;
+    color:#fff;display:flex;justify-content:space-between;align-items:center;gap:28px;flex-wrap:wrap;
+  }
+  .deep-dive .dd-kicker{font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#c9bdff;margin-bottom:10px;}
+  .deep-dive h4{font-family:'Fraunces',serif;font-size:23px;font-weight:500;margin-bottom:10px;color:#fff;}
+  .deep-dive p{color:#d8d9e0;font-size:14.5px;margin:0;max-width:540px;}
+  .deep-dive .dd-btn{
+    background:#fff;color:#12141c;padding:14px 24px;border-radius:999px;font-weight:600;font-size:14px;
+    white-space:nowrap;flex:none;
+  }
+  .deep-dive .dd-btn:hover{background:#c9bdff;}
+  /* CASE STUDY DETAIL */
+  .case{border-top:1px solid var(--line);}
+  .case-head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px;margin-bottom:50px;}
+  .case-head h2{font-size:clamp(30px,4.5vw,46px);font-weight:500;max-width:640px;}
+  .case-facts{display:grid;grid-template-columns:repeat(4,auto);gap:36px;margin-bottom:60px;padding:28px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .case-facts div span{display:block;font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px;}
+  .case-facts div b{font-size:15px;font-weight:600;}
+  @media (max-width:768px){.case-facts{grid-template-columns:repeat(2,1fr);}}
+  .case-block{display:grid;grid-template-columns:220px 1fr;gap:40px;margin-bottom:52px;}
+  @media (max-width:768px){.case-block{grid-template-columns:1fr;gap:14px;}}
+  .case-block h3{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--coral);}
+  .case-block .content p{margin-bottom:14px;color:#33374a;font-size:16px;}
+  .case-block ul{padding-left:20px;color:#33374a;font-size:16px;}
+  .case-block li{margin-bottom:8px;}
+  .process-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;}
+  @media (max-width:900px){.process-steps{grid-template-columns:repeat(2,1fr);}}
+  .step{background:var(--paper-dim);border:1px solid var(--line);border-radius:12px;padding:16px;}
+  .step .n{font-family:'Fraunces',serif;color:var(--coral);font-size:18px;margin-bottom:6px;}
+  .step h5{font-size:13.5px;margin-bottom:4px;}
+  .step p{font-size:12.5px;color:var(--muted);margin:0;}
+  .impact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  @media (max-width:768px){.impact-grid{grid-template-columns:1fr;}}
+  .impact-card{background:var(--ink);color:var(--paper);border-radius:14px;padding:24px;}
+  .impact-card b{font-family:'Fraunces',serif;font-size:15px;display:block;margin-bottom:8px;color:var(--coral);}
+  .impact-card p{font-size:14px;color:#e9e9ee;margin:0;}
+  /* higher-specificity overrides: .case-block .content p was winning the cascade and
+     forcing dark navy text onto these dark backgrounds — restore light, readable text */
+  .case-block .content .impact-card p{color:#e9e9ee;margin-bottom:0;}
+  .case-block .content .impact-card b{color:var(--coral);}
+  .case-block .content .deep-dive p{color:#ece9f7;margin-bottom:0;}
+  .case-block .content .deep-dive h4{color:#ffffff;}
+  .case-block .content .deep-dive .dd-kicker{color:#c9bdff;}
+  .back-top{display:inline-block;margin-top:10px;font-size:13px;color:var(--muted);}
+  .back-top:hover{color:var(--coral);}
+  /* EXPERIENCE */
+  .exp{background:var(--white);}
+  .exp-item{display:grid;grid-template-columns:180px 1fr;gap:30px;padding:28px 0;border-bottom:1px solid var(--line);}
+  .exp-item:last-child{border-bottom:none;}
+  .exp-item .when{color:var(--muted);font-size:13px;font-weight:600;letter-spacing:.03em;}
+  .exp-item h4{font-size:19px;margin-bottom:4px;}
+  .exp-item .role-co{color:var(--muted);font-size:14px;margin-bottom:12px;}
+  .exp-item ul{padding-left:18px;font-size:14.5px;color:#33374a;}
+  .exp-item li{margin-bottom:6px;}
+  @media (max-width:640px){.exp-item{grid-template-columns:1fr;gap:8px;}}
+  /* SKILLS */
+  .skills-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+  @media (max-width:900px){.skills-grid{grid-template-columns:repeat(2,1fr);}}
+  .skill-card{border:1px solid var(--line);border-radius:14px;padding:22px;background:var(--white);}
+  .skill-card h4{font-size:14px;text-transform:uppercase;letter-spacing:.04em;color:var(--coral);margin-bottom:14px;}
+  .skill-card .chip-row{margin-bottom:0;}
+  /* CONTACT / FOOTER */
+  footer{background:var(--ink);color:var(--paper);}
+  .contact-inner{text-align:center;padding:100px 0 60px;}
+  .contact-inner .kicker{color:var(--coral);}
+  .contact-inner h2{font-size:clamp(30px,5vw,56px);font-weight:500;max-width:760px;margin:0 auto 26px;}
+  .contact-inner p{color:#b7b9c4;max-width:520px;margin:0 auto 36px;font-size:16px;}
+  .contact-actions{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:70px;}
+  .btn-light{background:var(--paper);color:var(--ink);}
+  .btn-ghost{border:1.5px solid rgba(255,255,255,.25);color:var(--paper);}
+  .foot-bottom{
+    border-top:1px solid rgba(255,255,255,.12);padding:26px 0;
+    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;
+    font-size:13px;color:#8b8ea0;
+  }
+  .foot-links{display:flex;gap:22px;}
+  .foot-links a:hover{color:var(--paper);}
+</style>
+</head>
+<body>
+<header>
+  <nav class="wrap">
+    <a href="#" class="logo">Prashakha Bhardwaj</a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#work">Work</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+    </div>
+    <a href="#contact" class="nav-cta">Let's talk</a>
+  </nav>
+</header>
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Available for new opportunities</div>
+    <h1>Designing clarity into <em>complex</em> enterprise &amp; OTT products.</h1>
+    <p class="hero-sub">Senior UI/UX Designer with 6+ years turning dense business logic, role-based permissions, and multi-platform requirements into interfaces people can actually use — across Web, Mobile, Tablet, Smart TV, STB and DTH.</p>
+    <div class="hero-actions">
+      <a href="#work" class="btn btn-primary">View Case Studies →</a>
+      <a href="mailto:bhardwajprashakha14@gmail.com" class="btn btn-outline">Get In Touch</a>
+    </div>
+    <div class="hero-meta">
+      <div><b>6+ yrs</b><span>Product &amp; UX design</span></div>
+      <div><b>20+</b><span>Enterprise modules shipped</span></div>
+      <div><b>5</b><span>Platforms designed for</span></div>
+      <div><b>3</b><span>Companies, end-to-end ownership</span></div>
+    </div>
+  </div>
+</section>
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div>
+      <div class="kicker">About</div>
+      <h2 style="font-size:32px;font-weight:500;margin-bottom:20px;">I design for the moments where complexity meets real users.</h2>
+      <p>I'm a Product &amp; Experience Design professional based in Noida, India, currently designing an enterprise OTT operator console at Irdeto Technologies. My work sits at the intersection of dense, rule-heavy back-office systems and the end-user screens they ultimately power — content management, entitlement control, device provisioning, and system configuration, delivered across STB, Mobile, Tablet, Smart TV, and OTT.</p>
+      <p>What I'm good at: taking business logic that lives in engineering tickets and stakeholder heads, and turning it into structured information architecture, sprint-ready design systems, and flows that hold up under usability testing — not just in a prototype. I work close to Product, Engineering, and QA, because a design that can't ship isn't a design.</p>
+      <p>Outside of enterprise systems, I've designed transport and rental booking apps, internal admin dashboards, and healthcare/fintech case studies — and I use AI tools like Figma AI and ChatGPT to move faster from idea to validated flow, not to skip the thinking.</p>
+    </div>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="num">01</div>
+        <div><h4>Systems thinking</h4><p>Translating role-based, permission-driven business logic into intuitive, scalable UX.</p></div>
+      </div>
+      <div class="pillar">
+        <div class="num">02</div>
+        <div><h4>End-to-end ownership</h4><p>From research and IA through wireframes, prototypes, usability testing, to dev handoff.</p></div>
+      </div>
+      <div class="pillar">
+        <div class="num">03</div>
+        <div><h4>Multi-platform craft</h4><p>Designing coherently across Web, Mobile, Tablet, Smart TV, STB and DTH.</p></div>
+      </div>
+      <div class="pillar">
+        <div class="num">04</div>
+        <div><h4>Cross-functional delivery</h4><p>Partnering with Product, Engineering and QA to ship sprint-ready, production-grade design.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="work">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">Selected Work</div>
+      <h2>Four systems, four kinds of complexity.</h2>
+      <p>Each project below is a real engagement from my professional experience — not a speculative exercise. Full case studies are below the cards.</p>
+    </div>
+    <div class="work-grid">
+      <div class="work-card" style="border-color:#c9bdff;">
+        <div class="work-visual wv-featured"><span class="tag">Featured · Irdeto</span><h3>Redesigning the Enterprise Audit Experience</h3></div>
+        <div class="work-body">
+          <div class="meta">Irdeto Technologies · Version History &amp; Comparison</div>
+          <p>An 11-step manual audit investigation, spread across a disconnected module, redesigned into a 6-step contextual Version History &amp; Comparison workflow.</p>
+          <div class="chip-row"><span class="chip">UX Research</span><span class="chip">Information Architecture</span><span class="chip">Interaction Design</span></div>
+          <a href="#case-audit" class="work-link">Read the case study →</a>
+        </div>
+      </div>
+      <div class="work-card">
+        <div class="work-visual wv-1"><span class="tag">Enterprise · OTT</span><h3>Operator Console for Enterprise OTT</h3></div>
+        <div class="work-body">
+          <div class="meta">Irdeto Technologies · 2024–Present</div>
+          <p>A permission-driven console spanning 20+ modules — content, entitlement, device and system configuration — extended to device-side screens across five platforms.</p>
+          <div class="chip-row"><span class="chip">RBAC</span><span class="chip">Design Systems</span><span class="chip">Multi-platform</span></div>
+          <a href="#case-ott" class="work-link">Read the case study →</a>
+        </div>
+      </div>
+      <div class="work-card">
+        <div class="work-visual wv-2"><span class="tag">Mobility · Booking</span><h3>Fleet &amp; Vehicle Rental Platform</h3></div>
+        <div class="work-body">
+          <div class="meta">Dogma Systems India · 2022–2024</div>
+          <p>Self-service booking apps (scooter, car, self-drive) plus the back-office CRM operators use to manage fleets and rentals.</p>
+          <div class="chip-row"><span class="chip">Mobile-first</span><span class="chip">Research</span><span class="chip">Responsive Web</span></div>
+          <a href="#case-fleet" class="work-link">Read the case study →</a>
+        </div>
+      </div>
+      <div class="work-card">
+        <div class="work-visual wv-3"><span class="tag">Internal Tools</span><h3>Admin Dashboards &amp; Internal Consoles</h3></div>
+        <div class="work-body">
+          <div class="meta">ACIL Technologies · 2020–2022</div>
+          <p>Rebuilding trust in a product's design process by resolving recurring client-reported UX pain points, release over release.</p>
+          <div class="chip-row"><span class="chip">Usability Testing</span><span class="chip">IA</span><span class="chip">Stakeholder Trust</span></div>
+          <a href="#case-admin" class="work-link">Read the case study →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- CASE STUDY 1 -->
+<section class="case" id="case-audit">
+  <div class="wrap">
+    <div class="case-head">
+      <div>
+        <div class="kicker">Case Study 01</div>
+        <h2>Redesigning the Enterprise Audit Experience</h2>
+      </div>
+    </div>
+    <div class="case-facts">
+      <div><span>Client</span><b>Irdeto Technologies</b></div>
+      <div><span>Role</span><b>UI/UX Designer, end-to-end</b></div>
+      <div><span>Platforms</span><b>Operator Console (Web)</b></div>
+      <div><span>Duration</span><b>4–6 Weeks</b></div>
+    </div>
+    <div class="case-block">
+      <h3>Overview</h3>
+      <div class="content">
+        <p>Every action inside Irdeto's operator console — publishing a channel, updating a VOD asset, changing a household's entitlement — is recorded as an audit log. But audit history lived in a completely separate module, disconnected from the entity it described, so investigating a change meant leaving the record you were looking at to go find it somewhere else.</p>
+        <p>I led the redesign that moved Version History directly into the entity itself, and introduced a side-by-side Version Comparison view that replaced manual, field-by-field inspection with color-coded, at-a-glance differencing.</p>
+      </div>
+    </div>
+    <div class="case-block">
+      <h3>The Challenge</h3>
+      <div class="content">
+        <ul>
+          <li>Investigating a single change meant leaving the entity, remembering its Entity ID, and rebuilding filters from memory before a single result appeared.</li>
+          <li>Comparing two versions meant opening two separate audit records and manually holding both in your head — there was no comparison feature at all.</li>
+          <li>This eleven-step investigation was the single most time-consuming, most frequently repeated task for the operations team.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="case-block">
+      <h3>Process</h3>
+      <div class="content">
+        <div class="process-steps">
+          <div class="step"><div class="n">01</div><h5>Discovery</h5><p>Stakeholder discussions, support-team shadowing and developer workshops surfaced that operators never start from the Audit module — they need history while already viewing an entity.</p></div>
+          <div class="step"><div class="n">02</div><h5>Heuristic Audit</h5><p>Evaluated the existing flow against usability heuristics; recognition-over-recall and information hierarchy scored lowest.</p></div>
+          <div class="step"><div class="n">03</div><h5>IA &amp; Flow Redesign</h5><p>Moved Version History into Entity Details, collapsing an 11-step investigation into 6 steps.</p></div>
+          <div class="step"><div class="n">04</div><h5>Wireframing</h5><p>Explored horizontal cards, a modal, and a full-page comparison before settling on an in-context History + Compare pattern.</p></div>
+          <div class="step"><div class="n">05</div><h5>Visual &amp; Interaction Design</h5><p>Designed the Added/Updated/Removed/Unchanged comparison system, with Compare disabled until exactly two versions are selected.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="case-block">
+      <h3>Outcome</h3>
+      <div class="content">
+        <div class="impact-grid">
+          <div class="impact-card"><b>11 → 6 steps</b><p>Investigation steps cut nearly in half by removing every unnecessary module switch.</p></div>
+          <div class="impact-card"><b>Comparison, not memorization</b><p>Manual field-by-field comparison replaced with instant, color-coded differencing.</p></div>
+          <div class="impact-card"><b>One reusable pattern</b><p>The same Version History + Compare pattern was designed to scale across Channels, VOD, Households and Catalogs.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="case-block">
+      <h3>Go Deeper</h3>
+      <div class="content">
+        <div class="deep-dive">
+          <div>
+            <div class="dd-kicker">Full Annotated Case Study</div>
+            <h4>Every screen, decision and rejected idea</h4>
+            <p>The complete screen-by-screen breakdown — research, information architecture, hand-drawn wireframes, rejected concepts, and the fully annotated final UI.</p>
+          </div>
+          <a href="Redesigning-the-Enterprise-Audit-Experience.html" target="_blank" rel="noopener" class="dd-btn">Open full case study ↗</a>
+        </div>
+      </div>
+    </div>
+    <a href="#work" class="back-top">↑ Back to all work</a>
+  </div>
+</section>
+<!-- CASE STUDY 2 -->
+<section class="case" id="case-ott">
+  <div class="wrap">
+    <div class="case-head">
+      <div>
+        <div class="kicker">Case Study 02</div>
+        <h2>Designing the operator's control room for enterprise OTT</h2>
+      </div>
+    </div>
+    <div class="case-facts">
+      <div><span>Client</span><b>Irdeto Technologies</b></div>
+      <div><span>Role</span><b>UI/UX Designer, end-to-end</b></div>
+      <div><span>Platforms</span><b>Web, Mobile, STB, Smart TV, DTH</b></div>
+      <div><span>Duration</span><b>Jun 2024 – Present</b></div>
+    </div>
+    <div class="case-block">
+      <h3>Overview</h3>
+      <div class="content">
+        <p>Irdeto's operator console is the system pay-TV and OTT operators use to run their business — publishing content, controlling who has access to what, provisioning devices, and configuring the platform itself. It's built for admins, not consumers, but the stakes are consumer-facing: a misconfigured entitlement can lock a paying subscriber out of content they own.</p>
+        <p>I own UX end-to-end here, from the enterprise admin console down to the device-side screens it ultimately controls, across STB, Mobile, Tablet, Smart TV, and OTT. One specific module from this engagement — the Version History &amp; Comparison redesign — is broken out in full detail as <a href="#case-audit" style="color:var(--coral);font-weight:600;">Case Study 01 ↑</a>.</p>
+      </div>
+    </div>
+    <div class="case-block">
+      <h3>The Challenge</h3>
+      <div class="content">
+        <p>The console had grown to 20+ modules, each carrying its own business logic and role-based permission rules. That growth created three compounding problems for the people who used it every day:</p>
+        <ul>
+          <li>High cognitive load — dense data tables and permission-gated actions with little consistency in how they were presented module to module.</li>
+          <li>Steep onboarding — new admin users struggled to build a mental model of where an action lived and who was allowed to take it.</li>
+          <li>Slow, repetitive design-to-dev handoff — similar patterns (status indicators, permission gates, action tables) were being redesigned from scratch for every new module.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="case-block">
+      <h3>Process</h3>
+      <div class="content">
+        <div class="process-steps">
+          <div class="step"><div class="n">01</div><h5>Discovery</h5><p>Unpacked entitlement models and RBAC matrices with Product &amp; Engineering; audited existing modules for inconsistency.</p></div>
+          <div class="step"><div class="n">02</div><h5>IA</h5><p>Re-grouped navigation around admin mental models — content, entitlement, device, configuration — instead of backend architecture.</p></div>
+          <div class="step"><div class="n">03</div><h5>Design System</h5><p>Built reusable, sprint-ready components for tables, permission-gated actions and status states, adopted across 20+ modules.</p></div>
+          <div class="step"><div class="n">04</div><h5>Prototyping</h5><p>Interactive Figma prototypes for complex flows — content publishing, entitlement assignment, device provisioning.</p></div>
+          <div class="step"><div class="n">05</div><h5>Usability Testing</h5><p>Iterative rounds with admin users to validate and refine task flows before dev handoff.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="case-block">
+      <h3>Device-Side Design</h3>
+      <div class="content">
+        <p>Beyond the console, I designed the end-user-facing screens those admin decisions ultimately drive — adapting the same underlying patterns for remote-control navigation on STB and Smart TV, and touch interaction on Mobile and Tablet, so an entitlement or content rule looks and behaves consistently no matter where a subscriber encounters it.</p>
+      </div>
+    </div>
+    <div class="case-block">
+      <h3>Outcome</h3>
+      <div class="content">
+        <div class="impact-grid">
+          <div class="impact-card"><b>Reduced cognitive load</b><p>Complex business rules and permissions translated into structured, consistent UX flows across admin dashboards.</p></div>
+          <div class="impact-card"><b>Higher task completion</b><p>Iterative usability testing across admin dashboards improved completion rates release over release.</p></div>
+          <div class="impact-card"><b>Faster delivery</b><p>Reusable design system components cut redundant design-to-dev back-and-forth across 20+ modules.</p></div>
+        </div>
+      </div>
+    </div>
+    <a href="#work" class="back-top">↑ Back to all work</a>
+  </div>
+</section>
+<!-- CASE STUDY 3 -->
+<section class="case" id="case-fleet" style="background:var(--white);">
+  <div class="wrap">
+    <div class="case-head">
+      <div>
+        <div class="kicker">Case Study 03</div>
+        <h2>Getting people from "I need a ride" to booked, fast</h2>
+      </div>
+    </div>
+    <div class="case-facts">
+      <div><span>Client</span><b>Dogma Systems India</b></div>
+      <div><span>Role</span><b>UI/UX Designer</b></div>
+      <div><span>Platforms</span><b>Web &amp; Mobile</b></div>
+      <div><span>Duration</span><b>Aug 2022 – Jun 2024</b></div>
+    </div>
+    <div class="case-block">
+      <h3>Overview</h3>
+      <div class="content">
+        <p>Dogma Systems builds transport and vehicle rental products — self-service booking apps for riders (scooters, self-drive cars) and the CRM/rental-management tools operators use behind the scenes. I designed across both sides of that marketplace, including products such as a scooter self-booking app, a self-drive rental app, and the operator-facing rental CRM.</p>
+      </div>
+    </div>
+    <div class="case-block">
+      <h3>The Challenge</h3>
+      <div class="content">
+        <p>Two very different users, two very different pressures: riders wanted to go from "I need a vehicle" to booked in as few taps as possible, with real-time confidence in availability. Rental operators needed a CRM to manage fleets, bookings and logistics without a training manual — many were juggling it alongside phone and walk-in bookings.</p>
+      </div>
+    </div>
+    <div class="case-block">
+      <h3>Process</h3>
+      <div class="content">
+        <div class="process-steps">
+          <div class="step"><div class="n">01</div><h5>User Interviews</h5><p>Talked to end users and operators to ground feature decisions in real booking friction, not assumptions.</p></div>
+          <div class="step"><div class="n">02</div><h5>Personas &amp; Competitive Analysis</h5><p>Benchmarked against ride-share and rental apps to prioritize what actually mattered.</p></div>
+          <div class="step"><div class="n">03</div><h5>Information Architecture</h5><p>Simplified the booking flow and the CRM sitemap so both sides of the product stayed legible.</p></div>
+          <div class="step"><div class="n">04</div><h5>Responsive Prototypes</h5><p>Mobile-first booking flows; responsive web CRM dashboards for operators.</p></div>
+          <div class="step"><div class="n">05</div><h5>Handoff</h5><p>Detailed design specs partnered with developers and QA for accurate implementation.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="case-block">
+      <h3>Outcome</h3>
+      <div class="content">
+        <div class="impact-grid">
+          <div class="impact-card"><b>Multiple products shipped</b><p>Scooter self-booking, self-drive rental, and CRM tooling all shipped with responsive, user-tested flows.</p></div>
+          <div class="impact-card"><b>Lower booking friction</b><p>Streamlined browse → select → confirm → pick-up flow reduced steps to complete a booking.</p></div>
+          <div class="impact-card"><b>Clean implementation</b><p>Close developer/QA partnership meant user flows shipped accurately, with minimal rework.</p></div>
+        </div>
+      </div>
+    </div>
+    <a href="#work" class="back-top">↑ Back to all work</a>
+  </div>
+</section>
+<!-- CASE STUDY 4 -->
+<section class="case" id="case-admin">
+  <div class="wrap">
+    <div class="case-head">
+      <div>
+        <div class="kicker">Case Study 04</div>
+        <h2>Rebuilding trust in a product's design process</h2>
+      </div>
+    </div>
+    <div class="case-facts">
+      <div><span>Client</span><b>ACIL Technologies</b></div>
+      <div><span>Role</span><b>UI/UX Designer</b></div>
+      <div><span>Platforms</span><b>Web (Admin Panels)</b></div>
+      <div><span>Duration</span><b>Dec 2020 – Jul 2022</b></div>
+    </div>
+    <div class="case-block">
+      <h3>Overview</h3>
+      <div class="content">
+        <p>ACIL's internal dashboards and admin panels were used daily by internal teams and client stakeholders — but recurring UX pain points, flagged repeatedly through client feedback, had quietly eroded confidence in the design process itself.</p>
+      </div>
+    </div>
+    <div class="case-block">
+      <h3>The Challenge</h3>
+      <div class="content">
+        <p>The problem wasn't a single broken screen — it was a pattern: confusing task flows and unclear information hierarchy kept resurfacing across release cycles, and stakeholders had started to expect it rather than report it.</p>
+      </div>
+    </div>
+    <div class="case-block">
+      <h3>Process</h3>
+      <div class="content">
+        <div class="process-steps">
+          <div class="step"><div class="n">01</div><h5>Sitemap Audit</h5><p>Defined clear sitemap structures and applied consistent UX best practices across interfaces.</p></div>
+          <div class="step"><div class="n">02</div><h5>Usability Testing</h5><p>Ran testing across release cycles rather than once, to catch drift early.</p></div>
+          <div class="step"><div class="n">03</div><h5>Pain-Point Triage</h5><p>Took client-reported issues directly into the design backlog, resolved and shipped visibly.</p></div>
+          <div class="step"><div class="n">04</div><h5>Iteration</h5><p>Refined task flows release over release based on what testing and feedback actually showed.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="case-block">
+      <h3>Outcome</h3>
+      <div class="content">
+        <div class="impact-grid">
+          <div class="impact-card"><b>Improved completion</b><p>Task flows and completion rates improved across release cycles.</p></div>
+          <div class="impact-card"><b>Restored trust</b><p>Visibly resolving recurring pain points rebuilt stakeholder confidence in the design process.</p></div>
+          <div class="impact-card"><b>Cleaner IA</b><p>Consistent sitemap structure reduced confusion across the product's admin surfaces.</p></div>
+        </div>
+      </div>
+    </div>
+    <a href="#work" class="back-top">↑ Back to all work</a>
+  </div>
+</section>
+<section class="exp" id="experience">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">Experience</div>
+      <h2>Where I've built this.</h2>
+    </div>
+    <div class="exp-item">
+      <div class="when">Jun 2024 – Present</div>
+      <div>
+        <h4>UI/UX Designer</h4>
+        <div class="role-co">Irdeto Technologies — Noida, India</div>
+        <ul>
+          <li>Led end-to-end UX for an enterprise OTT operator console across Web, Mobile, STB and DTH.</li>
+          <li>Designed 20+ modules: content management, entitlement control, device management, system configuration.</li>
+          <li>Designed role-based, permission-driven workflows for secure handling of critical system actions.</li>
+          <li>Leveraged Figma AI and ChatGPT to accelerate ideation, flow design, and documentation.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="exp-item">
+      <div class="when">Aug 2022 – Jun 2024</div>
+      <div>
+        <h4>UI/UX Designer</h4>
+        <div class="role-co">Dogma Systems India — Noida, India</div>
+        <ul>
+          <li>Designed web and mobile interfaces for transport management and vehicle rental systems.</li>
+          <li>Conducted end-user interviews, persona creation, and competitor analysis to guide feature decisions.</li>
+          <li>Created responsive wireframes, interactive prototypes, and detailed specs for dev handoff.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="exp-item">
+      <div class="when">Dec 2020 – Jul 2022</div>
+      <div>
+        <h4>UI/UX Designer</h4>
+        <div class="role-co">ACIL Technologies — Gurgaon, India</div>
+        <ul>
+          <li>Led UI/UX for internal dashboards and admin panel applications.</li>
+          <li>Defined sitemap structures and applied UX best practices across product interfaces.</li>
+          <li>Conducted usability testing and iterated designs across release cycles.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="skills">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">Toolkit</div>
+      <h2>Tools, process, and platforms.</h2>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h4>Design &amp; Prototyping</h4>
+        <div class="chip-row"><span class="chip">Figma</span><span class="chip">Figma AI</span><span class="chip">Adobe XD</span><span class="chip">Sketch</span><span class="chip">InVision</span><span class="chip">Illustrator</span><span class="chip">Photoshop</span></div>
+      </div>
+      <div class="skill-card">
+        <h4>UX Process</h4>
+        <div class="chip-row"><span class="chip">User Research</span><span class="chip">Usability Testing</span><span class="chip">Journey Mapping</span><span class="chip">Personas</span><span class="chip">IA</span><span class="chip">Design Systems</span></div>
+      </div>
+      <div class="skill-card">
+        <h4>Platforms</h4>
+        <div class="chip-row"><span class="chip">Enterprise SaaS</span><span class="chip">OTT</span><span class="chip">Mobile (iOS/Android)</span><span class="chip">Smart TV</span><span class="chip">STB</span><span class="chip">DTH</span><span class="chip">RBAC</span></div>
+      </div>
+      <div class="skill-card">
+        <h4>Delivery</h4>
+        <div class="chip-row"><span class="chip">Agile/Scrum</span><span class="chip">Design Handoff</span><span class="chip">Stakeholder Comms</span><span class="chip">HTML/CSS</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+<footer id="contact">
+  <div class="wrap contact-inner">
+    <div class="kicker">Contact</div>
+    <h2>Let's design something that has to actually work.</h2>
+    <p>Open to Senior / Lead UI-UX roles in Enterprise SaaS, OTT and product-led teams. Based in Noida, India — open to remote and hybrid.</p>
+    <div class="contact-actions">
+      <a href="mailto:bhardwajprashakha14@gmail.com" class="btn btn-light">bhardwajprashakha14@gmail.com</a>
+      <a href="https://www.linkedin.com/in/prashakha-bhardwaj-ux/" target="_blank" rel="noopener" class="btn btn-ghost">LinkedIn ↗</a>
+      <a href="https://www.behance.net/prashakbhardwa" target="_blank" rel="noopener" class="btn btn-ghost">Behance ↗</a>
+    </div>
+    <div class="foot-bottom wrap" style="padding-left:0;padding-right:0;">
+      <span>© 2026 Prashakha Bhardwaj. Noida, India.</span>
+      <div class="foot-links">
+        <a href="tel:+918559885997">+91 85598 85997</a>
+        <a href="#about">About</a>
+        <a href="#work">Work</a>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
