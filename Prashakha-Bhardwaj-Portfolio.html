@@ -11,7 +11,7 @@
 <style>
 :root{
   --bg:#ffffff; --bg-soft:#faf9fc;
-  --ink:#0d0c12; --ink-soft:#484652; --ink-faint:#767486;
+  --ink:#0d0c12; --ink-soft:#484652; --ink-faint:#6a6779;
   --line:#dedaea; --line-soft:#e9e6f1;
   --purple:#6952f0; --purple-dark:#4a35c9; --purple-deep:#241a5e;
   --purple-soft:#f2effe; --purple-mid:#ded6fc;
@@ -159,7 +159,10 @@ section{padding:110px 0 90px; position:relative;}
 .case-block .content ul{padding-left:20px; color:var(--ink-soft); font-size:15.5px; margin:0;}
 .case-block .content li{margin-bottom:10px; line-height:1.65;}
 .process-steps{display:grid; grid-template-columns:repeat(5,1fr); gap:14px;}
+.process-steps-4{grid-template-columns:repeat(4,1fr);}
+.process-steps-3{grid-template-columns:repeat(3,1fr);}
 @media(max-width:900px){.process-steps{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:560px){.process-steps,.process-steps-4,.process-steps-3{grid-template-columns:1fr;}}
 .p-step{background:var(--bg-soft); border:1px solid var(--line); border-radius:12px; padding:16px;}
 .p-step .step-num{font-size:16px; margin-bottom:8px; padding-bottom:6px;}
 .p-step h5{font-size:13.5px; margin:0 0 4px; font-weight:700;}
@@ -239,6 +242,7 @@ footer::before{content:""; position:absolute; inset:0; background:radial-gradien
   <a href="#case-ott" class="it-dot" data-target="case-ott"></a>
   <a href="#case-fleet" class="it-dot" data-target="case-fleet"></a>
   <a href="#case-admin" class="it-dot" data-target="case-admin"></a>
+  <a href="#case-spendlane" class="it-dot" data-target="case-spendlane"></a>
   <a href="#experience" class="it-dot" data-target="experience"></a>
   <a href="#skills" class="it-dot" data-target="skills"></a>
   <a href="#contact" class="it-dot" data-target="contact"></a>
@@ -325,6 +329,12 @@ footer::before{content:""; position:absolute; inset:0; background:radial-gradien
         <p class="wc-desc">Rebuilding trust in a product's design process by resolving recurring UX pain points release over release.</p>
         <div class="tag-row" style="margin-bottom:18px;"><span class="badge badge-gray">Usability Testing</span><span class="badge badge-gray">IA</span></div>
         <a href="#case-admin" class="work-link">Read the case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+    <div class="card reveal" style="margin-top:24px; display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap;">
+      <div>
+        <span class="badge badge-purple" style="margin-bottom:10px;">Outside client work</span>
+        <p style="margin:0; font-size:14.5px; color:var(--ink-soft); max-width:640px;">I also design self-initiated concept projects to practice UX outside what my day job covers. <a href="#case-spendlane" style="color:var(--purple-dark); font-weight:700;">See Spendlane, a fintech spend-management concept &darr;</a></p>
       </div>
     </div>
   </div>
@@ -622,7 +632,7 @@ footer::before{content:""; position:absolute; inset:0; background:radial-gradien
     <div class="case-block reveal">
       <div class="cb-label">Process</div>
       <div class="content">
-        <div class="process-steps" style="grid-template-columns:repeat(4,1fr);">
+        <div class="process-steps process-steps-4">
           <div class="p-step"><div class="step-num">01</div><h5>Sitemap Audit</h5><p>Defined clear sitemap structures and applied consistent UX best practices across interfaces.</p></div>
           <div class="p-step"><div class="step-num">02</div><h5>Usability Testing</h5><p>Ran testing across release cycles rather than once, to catch drift early.</p></div>
           <div class="p-step"><div class="step-num">03</div><h5>Pain-Point Triage</h5><p>Took client-reported issues directly into the design backlog, resolved and shipped visibly.</p></div>
@@ -645,11 +655,80 @@ footer::before{content:""; position:absolute; inset:0; background:radial-gradien
   </div>
 </section>
 
+<!-- CONCEPT PROJECT -->
+<section class="case" id="case-spendlane" style="background:var(--bg-soft);">
+  <div class="wrap">
+    <div class="case-head reveal">
+      <div>
+        <div class="kicker"><span class="num">08</span> Concept Project <span class="line"></span></div>
+        <h2>Designing Spendlane: Budget Clarity for Small Teams</h2>
+      </div>
+    </div>
+    <div class="case-facts reveal">
+      <div class="cf-item"><div class="cf-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20.6 12.9 12.9 20.6a2 2 0 0 1-2.8 0L3 13.5V4h9.5l8.1 8.1a2 2 0 0 1 0 2.8Z"/><circle cx="7.5" cy="8.5" r="1.2" fill="currentColor" stroke="none"/></svg></div><div><span class="cf-label">Client</span><span class="cf-val">None &mdash; self-initiated, not client work</span></div></div>
+      <div class="cf-item"><div class="cf-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.4"/><path d="M5.5 20c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5"/></svg></div><div><span class="cf-label">Role</span><span class="cf-val">UI/UX Designer, solo</span></div></div>
+      <div class="cf-item"><div class="cf-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8v8l-9 5-9-5V8l9-5 9 5Z"/><path d="M3 8l9 5 9-5"/><path d="M12 13v8"/></svg></div><div><span class="cf-label">Platform</span><span class="cf-val">Web (Figma + coded prototype)</span></div></div>
+      <div class="cf-item"><div class="cf-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3.2 2"/></svg></div><div><span class="cf-label">Duration</span><span class="cf-val">Personal project, 2026</span></div></div>
+    </div>
+    <div class="case-block reveal">
+      <div class="cb-label">Overview</div>
+      <div class="content">
+        <p>Most of my professional work lives in enterprise operator consoles and internal admin tools, so I built Spendlane, a concept spend-management product for small business teams, to practice fintech UX end to end: budget visibility, card-level controls, and approval flows people can actually trust.</p>
+        <p>There's no company behind it and no real users yet. Every screen, flow and design decision is my own, designed solo in Figma from a blank page.</p>
+      </div>
+    </div>
+    <div class="case-block reveal">
+      <div class="cb-label">The Challenge</div>
+      <div class="content">
+        <ul>
+          <li>Once a company has more than one card-holder, budgets get tracked reactively, in spreadsheets after the statement arrives, not while spending is happening.</li>
+          <li>Approval requests sit in an inbox with no budget context, so approving feels like a guess rather than a decision.</li>
+          <li>Cards are rarely frozen or adjusted individually when circumstances change, because doing so isn't a one-click action.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="case-block reveal">
+      <div class="cb-label">Process</div>
+      <div class="content">
+        <div class="process-steps process-steps-3">
+          <div class="p-step"><div class="step-num">01</div><h5>Status at a Glance</h5><p>A dashboard that answers "am I on budget" in under two seconds.</p></div>
+          <div class="p-step"><div class="step-num">02</div><h5>Context Travels</h5><p>Every approval carries inline budget context, so saying yes or no is a fast, confident call.</p></div>
+          <div class="p-step"><div class="step-num">03</div><h5>Control at the Card</h5><p>Freezing a card or adjusting a limit is a single toggle, not a support ticket.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="case-block reveal">
+      <div class="cb-label">Outcome</div>
+      <div class="content">
+        <div class="metric-grid">
+          <div class="metric-card"><b>11 screens</b><div style="font-size:14px;font-weight:700;margin-bottom:4px;">A full product surface</div><p>From onboarding to an AI assistant, spanning admin, employee, and mobile, not just a dashboard demo.</p></div>
+          <div class="metric-card"><b>3 roles</b><div style="font-size:14px;font-weight:700;margin-bottom:4px;">Not one dashboard, three</div><p>Admin, employee, and a mobile flow, each built around what that person actually needs to see.</p></div>
+          <div class="metric-card"><b>0 real users</b><div style="font-size:14px;font-weight:700;margin-bottom:4px;">Untested, by design</div><p>No usage data to report yet, usability testing with real finance admins is the honest next step.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="case-block reveal">
+      <div class="cb-label">Go Deeper</div>
+      <div class="content">
+        <div class="deep-dive">
+          <div>
+            <div class="dd-kicker">Full Case Study</div>
+            <h4>Onboarding, dashboard, budgets, card controls, approvals, subscriptions, an AI assistant, and the employee-facing screens behind them</h4>
+            <p>The complete write-up: problem framing, design principles, 11 screens across admin, employee, and mobile with annotated decisions, and what I'd test next with real users.</p>
+          </div>
+          <a href="Designing-Spendlane-Case-Study.html" target="_blank" rel="noopener" class="btn btn-purple">Open full case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M9 7h8v8"/></svg></a>
+          </div>
+      </div>
+    </div>
+    <a href="#work" class="back-top">&uarr; Back to all work</a>
+  </div>
+</section>
+
 <!-- EXPERIENCE -->
 <section id="experience">
   <div class="wrap">
     <div class="section-head reveal">
-      <div class="kicker"><span class="num">08</span> Experience <span class="line"></span></div>
+      <div class="kicker"><span class="num">09</span> Experience <span class="line"></span></div>
       <h2>Where the work happened</h2>
     </div>
     <div class="exp-list">
@@ -694,7 +773,7 @@ footer::before{content:""; position:absolute; inset:0; background:radial-gradien
 <section id="skills" style="background:var(--bg-soft);">
   <div class="wrap">
     <div class="section-head reveal">
-      <div class="kicker"><span class="num">09</span> Skills <span class="line"></span></div>
+      <div class="kicker"><span class="num">10</span> Skills <span class="line"></span></div>
       <h2>Tools of the trade</h2>
     </div>
     <div class="grid-5">
@@ -735,7 +814,7 @@ footer::before{content:""; position:absolute; inset:0; background:radial-gradien
 <!-- CONTACT / FOOTER -->
 <footer id="contact">
   <div class="wrap contact-inner">
-    <div class="kicker"><span class="num">10</span> Contact <span class="line"></span></div>
+    <div class="kicker"><span class="num">11</span> Contact <span class="line"></span></div>
     <h2>Let's build something worth using</h2>
     <p>Open to UI/UX roles and collaborations. The fastest way to reach me is email.</p>
     <div class="contact-actions">
@@ -764,7 +843,7 @@ footer::before{content:""; position:absolute; inset:0; background:radial-gradien
 </footer>
 
 <script>
-const secIds = ["hero","about","work","case-channel","case-audit","case-ott","case-fleet","case-admin","experience","skills","contact"];
+const secIds = ["hero","about","work","case-channel","case-audit","case-ott","case-fleet","case-admin","case-spendlane","experience","skills","contact"];
 const sections = secIds.map(id => document.getElementById(id)).filter(Boolean);
 const dots = document.querySelectorAll('.it-dot');
 const navLinks = document.querySelectorAll('#topnav .nav-links a');
@@ -774,7 +853,7 @@ const totop = document.getElementById('totop');
 
 const navMap = {
   "about":"about",
-  "work":"work","case-channel":"work","case-audit":"work","case-ott":"work","case-fleet":"work","case-admin":"work",
+  "work":"work","case-channel":"work","case-audit":"work","case-ott":"work","case-fleet":"work","case-admin":"work","case-spendlane":"work",
   "experience":"experience",
   "skills":"skills"
 };
