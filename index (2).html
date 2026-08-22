@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prashakha Bhardwaj · Senior UI/UX Designer</title>
+<meta name="description" content="Portfolio of Prashakha Bhardwaj, Senior UI/UX Designer specializing in Enterprise SaaS, OTT platforms, and complex admin systems.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffffff; --bg-soft:#faf9fc;
+  --ink:#0d0c12; --ink-soft:#484652; --ink-faint:#6a6779;
+  --line:#dedaea; --line-soft:#e9e6f1;
+  --purple:#6952f0; --purple-dark:#4a35c9; --purple-deep:#241a5e;
+  --purple-soft:#f2effe; --purple-mid:#ded6fc;
+  --green:#15803d; --green-soft:#e9f8ee; --green-line:#bfe8cd;
+  --blue:#1d4ed8; --blue-soft:#eaf1ff; --blue-line:#c7dbff;
+  --red:#b91c1c; --red-soft:#fdecec; --red-line:#f5c6c6;
+  --amber:#b45309; --amber-soft:#fdf1de; --amber-line:#f2d9ac;
+  --gray-soft:#e7e6ec; --gray-line:#cfcdd9;
+  --radius-s:12px; --radius:20px; --radius-l:28px;
+  --shadow: 0 1px 2px rgba(20,10,50,.04), 0 10px 30px -14px rgba(20,10,50,.14);
+  --shadow-lg: 0 30px 80px -30px rgba(20,10,50,.35);
+  --maxw:1180px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0; background:var(--bg); color:var(--ink); font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; -webkit-font-smoothing:antialiased; font-size:16px; line-height:1.6;}
+::selection{background:var(--purple-mid); color:var(--purple-deep);}
+img{max-width:100%; display:block;}
+a{color:inherit; text-decoration:none;}
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 40px;}
+.mono{font-family:'JetBrains Mono',monospace;}
+@media(max-width:820px){.wrap{padding:0 22px;}}
+
+#progress{position:fixed; top:0; left:0; height:3px; width:0%; background:linear-gradient(90deg,var(--purple),#a892ff); z-index:9999; transition:width .1s linear;}
+#topnav{position:fixed; top:0; left:0; right:0; z-index:9998; display:flex; align-items:center; justify-content:space-between; padding:14px 40px; backdrop-filter:blur(14px); background:rgba(255,255,255,.78); border-bottom:1px solid transparent; transition:border-color .3s, box-shadow .3s; font-size:13.5px; font-weight:600;}
+#topnav.scrolled{border-color:var(--line); box-shadow:0 1px 0 rgba(20,10,50,.02);}
+#topnav .brand{display:flex; align-items:center; gap:10px; font-weight:800; font-size:15px; letter-spacing:-0.01em;}
+#topnav .brand .dot{width:9px; height:9px; border-radius:50%; background:var(--purple);}
+#topnav .nav-links{display:flex; gap:30px; color:var(--ink-soft);}
+#topnav .nav-links a{transition:color .2s; position:relative; padding-bottom:3px;}
+#topnav .nav-links a:hover{color:var(--purple-dark);}
+#topnav .nav-links a.active{color:var(--purple-dark);}
+#topnav .nav-links a.active::after{content:""; position:absolute; left:0; right:0; bottom:-3px; height:2px; border-radius:2px; background:var(--purple);}
+#topnav .nav-cta{background:var(--ink); color:#fff; padding:10px 20px; border-radius:100px; font-size:13px; font-weight:700;}
+@media(max-width:900px){#topnav .nav-links{display:none;} #topnav{padding:12px 22px;}}
+
+#totop{position:fixed; right:26px; bottom:26px; z-index:9998; width:46px; height:46px; border-radius:50%; background:var(--ink); color:#fff; display:flex; align-items:center; justify-content:center; box-shadow:var(--shadow-lg); opacity:0; pointer-events:none; transform:translateY(10px); transition:all .35s ease; cursor:pointer; text-decoration:none; font-size:18px;}
+#totop.show{opacity:1; pointer-events:auto; transform:translateY(0);}
+
+.index-tab{position:fixed; left:26px; top:50%; transform:translateY(-50%); z-index:9998; display:flex; flex-direction:column; gap:6px;}
+.index-tab .it-dot{display:block; width:6px; height:6px; border-radius:50%; background:var(--line); transition:all .3s; cursor:pointer;}
+.index-tab .it-dot:hover{background:var(--purple-mid);}
+.index-tab .it-dot.active{background:var(--purple); height:20px; border-radius:4px;}
+@media(max-width:1100px){.index-tab{display:none;}}
+
+section{padding:110px 0 90px; position:relative;}
+@media(max-width:820px){section{padding:74px 0 60px;}}
+
+.kicker{display:inline-flex; align-items:center; gap:10px; font-size:13px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--purple); margin-bottom:20px;}
+.kicker .num{font-family:'JetBrains Mono',monospace; background:var(--purple-soft); color:var(--purple-dark); padding:3px 9px; border-radius:7px; letter-spacing:0;}
+.kicker .line{width:34px; height:1px; background:var(--purple-mid);}
+.section-head{max-width:680px; margin-bottom:52px;}
+.section-head h2{font-size:clamp(28px,3.6vw,42px); font-weight:800; letter-spacing:-0.02em; line-height:1.15; margin:0;}
+.section-head p{color:var(--ink-soft); margin-top:14px; font-size:16.5px; max-width:620px;}
+
+.reveal{opacity:0; transform:translateY(22px); transition:opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1);}
+.reveal.in{opacity:1; transform:translateY(0);}
+
+.grid-2{display:grid; grid-template-columns:1fr 1fr; gap:22px;}
+.grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
+.grid-4{display:grid; grid-template-columns:repeat(4,1fr); gap:18px;}
+.grid-5{display:grid; grid-template-columns:repeat(5,1fr); gap:16px;}
+@media(max-width:1100px){.grid-5{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:900px){.grid-2,.grid-3,.grid-4{grid-template-columns:1fr;}}
+@media(max-width:640px){.grid-5{grid-template-columns:1fr;}}
+
+.card{background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:28px; box-shadow:var(--shadow); transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;}
+.card.soft{background:var(--bg-soft);}
+.card.tinted{background:var(--purple-soft); border-color:var(--purple-mid);}
+.card:hover{transform:translateY(-3px); box-shadow:0 16px 34px rgba(28,20,58,.10); border-color:var(--purple-mid);}
+.card-icon{width:42px; height:42px; border-radius:12px; background:var(--purple-soft); color:var(--purple-dark); box-shadow:inset 0 0 0 1px rgba(105,82,240,.14); display:flex; align-items:center; justify-content:center; margin-bottom:16px;}
+.card-icon svg{width:22px; height:22px;}
+.step-num{font-family:'JetBrains Mono',monospace; font-weight:800; font-size:19px; color:var(--purple); margin-bottom:12px; padding-bottom:9px; border-bottom:2px solid var(--purple-mid); display:inline-block;}
+
+.badge{display:inline-flex; align-items:center; gap:6px; font-size:12.5px; font-weight:700; padding:5px 11px; border-radius:100px; letter-spacing:.01em;}
+.badge-green{background:var(--green-soft); color:var(--green); border:1px solid var(--green-line);}
+.badge-blue{background:var(--blue-soft); color:var(--blue); border:1px solid var(--blue-line);}
+.badge-red{background:var(--red-soft); color:var(--red); border:1px solid var(--red-line);}
+.badge-amber{background:var(--amber-soft); color:var(--amber); border:1px solid var(--amber-line);}
+.badge-gray{background:var(--gray-soft); color:var(--ink-soft); border:1px solid var(--gray-line);}
+.badge-purple{background:var(--purple-soft); color:var(--purple-dark); border:1px solid var(--purple-mid);}
+.tag-row{display:flex; flex-wrap:wrap; gap:8px;}
+.divider{height:1px; background:var(--line); margin:44px 0;}
+
+.btn{padding:14px 26px; border-radius:100px; font-weight:700; font-size:14px; display:inline-flex; align-items:center; gap:8px; transition:transform .15s, box-shadow .15s, background .15s; border:none; cursor:pointer;}
+.btn-primary{background:var(--ink); color:#fff;}
+.btn-primary:hover{transform:translateY(-2px); box-shadow:0 10px 24px rgba(13,12,18,.22);}
+.btn-outline{border:1.5px solid var(--line); background:#fff;}
+.btn-outline:hover{border-color:var(--purple); color:var(--purple-dark); transform:translateY(-2px);}
+.btn-purple{background:var(--purple); color:#fff;}
+.btn-purple:hover{background:var(--purple-dark); transform:translateY(-2px); box-shadow:0 10px 24px rgba(105,82,240,.3);}
+.btn svg{width:16px; height:16px;}
+
+/* HERO */
+#hero{min-height:92vh; display:flex; flex-direction:column; justify-content:center; position:relative; padding:150px 0 70px; overflow:hidden;
+  background:
+    radial-gradient(1100px 500px at 15% -10%, #efe9ff 0%, rgba(239,233,255,0) 60%),
+    radial-gradient(900px 500px at 100% 10%, #eef2ff 0%, rgba(238,242,255,0) 60%);}
+#hero::before{content:""; position:absolute; inset:0; background-image:
+    linear-gradient(to right, var(--line-soft) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--line-soft) 1px, transparent 1px);
+  background-size:64px 64px; mask-image:radial-gradient(700px 500px at 30% 20%, black, transparent 70%); opacity:.7; pointer-events:none;}
+.hero-eyebrow{display:inline-flex; align-items:center; gap:8px; font-size:13px; font-weight:700; color:var(--purple-dark); background:#fff; border:1px solid var(--purple-mid); padding:8px 16px; border-radius:100px; box-shadow:var(--shadow); margin-bottom:30px;}
+.hero-eyebrow::before{content:""; width:7px; height:7px; border-radius:50%; background:var(--green);}
+.hero-title{font-size:clamp(38px,6vw,74px); font-weight:800; letter-spacing:-0.035em; line-height:1.05; max-width:920px; margin:0 0 24px;}
+.hero-title .accent{color:var(--purple);}
+.hero-sub{font-size:clamp(17px,2vw,20px); color:var(--ink-soft); max-width:660px; font-weight:500; margin-bottom:36px; line-height:1.6;}
+.hero-actions{display:flex; gap:14px; margin-top:6px; flex-wrap:wrap;}
+.hero-meta{display:grid; grid-template-columns:repeat(4,auto); gap:36px; border-top:1px solid var(--line); padding-top:24px; margin-top:56px; max-width:820px;}
+.hero-meta .m-label{font-size:11.5px; text-transform:uppercase; letter-spacing:.08em; color:var(--ink-faint); font-weight:700; margin-bottom:8px;}
+.hero-meta .m-val{font-family:'JetBrains Mono',monospace; font-size:24px; font-weight:800; color:var(--ink);}
+@media(max-width:820px){.hero-meta{grid-template-columns:repeat(2,1fr); row-gap:26px;}}
+
+/* ABOUT */
+.about-grid{display:grid; grid-template-columns:1.1fr 1fr; gap:60px; align-items:start;}
+@media(max-width:900px){.about-grid{grid-template-columns:1fr;}}
+.about-grid p{font-size:16.5px; color:var(--ink-soft); margin-bottom:16px; line-height:1.75;}
+.pillars{display:flex; flex-direction:column; gap:16px;}
+
+/* WORK CARDS */
+.work-card{background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:30px; box-shadow:var(--shadow); transition:transform .25s, box-shadow .25s, border-color .25s;}
+.work-card:hover{transform:translateY(-4px); box-shadow:0 16px 34px rgba(28,20,58,.10); border-color:var(--purple-mid);}
+.work-card.featured{border-color:var(--purple-mid); background:linear-gradient(180deg,var(--purple-soft) 0%, #fff 140px);}
+.work-card h3{font-size:21px; font-weight:800; letter-spacing:-0.01em; margin:12px 0 10px;}
+.work-card p.wc-desc{color:var(--ink-soft); font-size:15px; margin-bottom:18px; line-height:1.65;}
+.work-link{font-weight:700; font-size:14px; display:inline-flex; align-items:center; gap:6px; color:var(--purple-dark);}
+.work-link svg{width:15px; height:15px; transition:transform .2s;}
+.work-link:hover svg{transform:translateX(3px);}
+
+/* CASE STUDY DETAIL BLOCKS */
+.case{border-top:1px solid var(--line);}
+.case-head{display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:24px; margin-bottom:40px;}
+.case-head h2{font-size:clamp(28px,4.2vw,42px); font-weight:800; letter-spacing:-0.02em; max-width:680px; margin:0;}
+.case-facts{display:grid; grid-template-columns:repeat(4,auto); gap:36px; margin-bottom:50px; padding:26px 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+.case-facts .cf-item{display:flex; align-items:flex-start; gap:10px;}
+.case-facts .cf-icon{color:var(--purple-mid); flex:none; margin-top:2px;}
+.case-facts .cf-icon svg{width:18px; height:18px;}
+.case-facts .cf-label{display:block; font-size:11.5px; color:var(--ink-faint); text-transform:uppercase; letter-spacing:.06em; margin-bottom:5px;}
+.case-facts .cf-val{font-size:14.5px; font-weight:700;}
+@media(max-width:820px){.case-facts{grid-template-columns:repeat(2,1fr); row-gap:22px;}}
+.case-block{display:grid; grid-template-columns:210px 1fr; gap:40px; margin-bottom:48px;}
+@media(max-width:820px){.case-block{grid-template-columns:1fr; gap:12px;}}
+.case-block .cb-label{font-size:12.5px; font-weight:800; text-transform:uppercase; letter-spacing:.06em; color:var(--purple-dark); padding-left:12px; border-left:3px solid var(--purple-mid); height:fit-content;}
+.case-block .content p{margin-bottom:14px; color:var(--ink-soft); font-size:16px; line-height:1.7;}
+.case-block .content ul{padding-left:20px; color:var(--ink-soft); font-size:15.5px; margin:0;}
+.case-block .content li{margin-bottom:10px; line-height:1.65;}
+.process-steps{display:grid; grid-template-columns:repeat(5,1fr); gap:14px;}
+.process-steps-4{grid-template-columns:repeat(4,1fr);}
+.process-steps-3{grid-template-columns:repeat(3,1fr);}
+@media(max-width:900px){.process-steps{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:560px){.process-steps,.process-steps-4,.process-steps-3{grid-template-columns:1fr;}}
+.p-step{background:var(--bg-soft); border:1px solid var(--line); border-radius:12px; padding:16px;}
+.p-step .step-num{font-size:16px; margin-bottom:8px; padding-bottom:6px;}
+.p-step h5{font-size:13.5px; margin:0 0 4px; font-weight:700;}
+.p-step p{font-size:12.5px; color:var(--ink-soft); margin:0;}
+.metric-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px;}
+@media(max-width:820px){.metric-grid{grid-template-columns:1fr;}}
+.metric-card{background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:26px 24px; box-shadow:var(--shadow);}
+.metric-card b{font-family:'JetBrains Mono',monospace; color:var(--purple-dark); font-size:15px; display:block; margin-bottom:8px;}
+.metric-card p{font-size:13.5px; color:var(--ink-soft); margin:0; line-height:1.55;}
+.deep-dive{background:var(--purple-soft); border:1px solid var(--purple-mid); border-radius:var(--radius); padding:32px; display:flex; justify-content:space-between; align-items:center; gap:28px; flex-wrap:wrap;}
+.deep-dive .dd-kicker{font-size:12px; font-weight:800; letter-spacing:.07em; text-transform:uppercase; color:var(--purple-dark); margin-bottom:10px;}
+.deep-dive h4{font-size:20px; font-weight:800; margin:0 0 8px; color:var(--ink); letter-spacing:-0.01em;}
+.deep-dive p{color:var(--ink-soft); font-size:14.5px; margin:0; max-width:520px;}
+.back-top{display:inline-flex; align-items:center; gap:6px; margin-top:8px; font-size:13px; color:var(--ink-faint); font-weight:600;}
+.back-top:hover{color:var(--purple-dark);}
+
+/* EXPERIENCE */
+.exp-item{display:grid; grid-template-columns:170px 1fr; gap:30px; padding:28px 0; border-bottom:1px solid var(--line);}
+.exp-item:last-child{border-bottom:none;}
+.exp-item .when{font-family:'JetBrains Mono',monospace; color:var(--purple-dark); font-size:13px; font-weight:700; letter-spacing:.01em;}
+.exp-item h4{font-size:19px; font-weight:800; margin:0 0 4px;}
+.exp-item .role-co{color:var(--ink-soft); font-size:14px; margin-bottom:12px;}
+.exp-item ul{padding-left:18px; font-size:14.5px; color:var(--ink-soft); margin:0;}
+.exp-item li{margin-bottom:7px; line-height:1.6;}
+@media(max-width:700px){.exp-item{grid-template-columns:1fr; gap:8px;}}
+
+/* SKILLS */
+.skill-card h4{font-size:13.5px; text-transform:uppercase; letter-spacing:.05em; color:var(--purple-dark); margin:0 0 14px; font-weight:800;}
+
+/* FOOTER */
+footer{background:var(--ink); color:#fff; position:relative; overflow:hidden; padding:100px 0 0;}
+footer::before{content:""; position:absolute; inset:0; background:radial-gradient(700px 400px at 85% 0%, rgba(105,82,240,.35), transparent 60%);}
+.contact-inner{text-align:center; position:relative;}
+.contact-inner .kicker{color:#c9bdff; justify-content:center;}
+.contact-inner .kicker .num{background:rgba(255,255,255,.12); color:#fff;}
+.contact-inner .kicker .line{background:rgba(255,255,255,.25);}
+.contact-inner h2{font-size:clamp(30px,4.6vw,50px); font-weight:800; letter-spacing:-0.02em; max-width:760px; margin:0 auto 22px;}
+.contact-inner p{color:rgba(255,255,255,.65); max-width:520px; margin:0 auto 34px; font-size:16px;}
+.contact-actions{display:flex; justify-content:center; gap:14px; flex-wrap:wrap; margin-bottom:18px;}
+.contact-location{display:flex; align-items:center; justify-content:center; gap:8px; color:rgba(255,255,255,.5); font-size:13.5px; margin-bottom:44px;}
+.contact-location svg{width:15px; height:15px;}
+.btn-light{background:#fff; color:var(--ink);}
+.btn-light:hover{background:#e9e5ff;}
+.btn-ghost{border:1.5px solid rgba(255,255,255,.28); color:#fff;}
+.btn-ghost:hover{border-color:#fff; transform:translateY(-2px);}
+.social-row{display:flex; justify-content:center; gap:12px; flex-wrap:wrap; margin-bottom:70px;}
+.social-pill{display:inline-flex; align-items:center; gap:10px; padding:8px 18px 8px 8px; border-radius:100px; border:1px solid rgba(255,255,255,.2); font-size:13.5px; font-weight:700; transition:border-color .2s, transform .2s;}
+.social-pill:hover{border-color:#fff; transform:translateY(-2px);}
+.social-mono{width:28px; height:28px; border-radius:50%; background:rgba(255,255,255,.12); display:flex; align-items:center; justify-content:center; font-family:'JetBrains Mono',monospace; font-weight:800; font-size:12px;}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.12); padding:26px 40px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px; font-size:13px; color:rgba(255,255,255,.5); max-width:var(--maxw); margin:0 auto;}
+.foot-links{display:flex; gap:22px;}
+.foot-links a:hover{color:#fff;}
+.foot-links a{display:inline-flex; align-items:center; gap:6px;}
+.foot-links svg{width:13px; height:13px;}
+</style>
+</head>
+<body>
+
+<div id="progress"></div>
+<div id="topnav">
+  <div class="brand"><span class="dot"></span> Prashakha Bhardwaj</div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#work">Work</a>
+    <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
+  </div>
+  <a href="#contact" class="nav-cta">Let's talk</a>
+</div>
+<a id="totop" href="#hero">&uarr;</a>
+<div class="index-tab">
+  <a href="#hero" class="it-dot active" data-target="hero"></a>
+  <a href="#about" class="it-dot" data-target="about"></a>
+  <a href="#work" class="it-dot" data-target="work"></a>
+  <a href="#case-channel" class="it-dot" data-target="case-channel"></a>
+  <a href="#case-audit" class="it-dot" data-target="case-audit"></a>
+  <a href="#case-ott" class="it-dot" data-target="case-ott"></a>
+  <a href="#case-fleet" class="it-dot" data-target="case-fleet"></a>
+  <a href="#case-admin" class="it-dot" data-target="case-admin"></a>
+  <a href="#case-spendlane" class="it-dot" data-target="case-spendlane"></a>
+  <a href="#experience" class="it-dot" data-target="experience"></a>
+  <a href="#skills" class="it-dot" data-target="skills"></a>
+  <a href="#contact" class="it-dot" data-target="contact"></a>
+</div>
+
+<section id="hero">
+  <div class="wrap">
+    <div class="hero-eyebrow reveal">Available for new opportunities</div>
+    <h1 class="hero-title reveal">Designing clarity into <span class="accent">complex</span> enterprise &amp; OTT products.</h1>
+    <p class="hero-sub reveal">Senior UI/UX Designer with 6+ years turning dense business logic, role-based permissions, and multi-platform requirements into interfaces people can actually use, across Web, Mobile, Tablet, Smart TV, STB and DTH.</p>
+    <div class="hero-actions reveal">
+      <a href="#work" class="btn btn-purple">View Case Studies <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
+      <a href="https://bhardwajprashakha14.github.io/Prashakha-Bhardwaj-Portfolio/Prashakha-Bhardwaj-Resume.pdf" target="_blank" rel="noopener" class="btn btn-outline">Download Resume</a>
+      <a href="mailto:bhardwajprashakha14@gmail.com" class="btn btn-outline">Get In Touch</a>
+    </div>
+    <div class="hero-meta reveal">
+      <div><div class="m-label">Experience</div><div class="m-val">6+ yrs</div></div>
+      <div><div class="m-label">Modules Shipped</div><div class="m-val">20+</div></div>
+      <div><div class="m-label">Platforms</div><div class="m-val">5</div></div>
+      <div><div class="m-label">Companies</div><div class="m-val">3</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap about-grid">
+    <div>
+      <div class="kicker reveal"><span class="num">01</span> About <span class="line"></span></div>
+      <h2 class="reveal" style="font-size:32px;font-weight:800;letter-spacing:-0.02em;margin-bottom:20px;">I design for the moments where complexity meets real users.</h2>
+      <p class="reveal">I'm a Product &amp; Experience Design professional based in Noida, India, currently designing an enterprise OTT operator console at Irdeto Technologies. My work sits at the intersection of dense, rule-heavy back-office systems and the end-user screens they ultimately power: content management, entitlement control, device provisioning, and system configuration, delivered across STB, Mobile, Tablet, Smart TV, and OTT.</p>
+      <p class="reveal">What I'm good at is taking business logic that lives in engineering tickets and stakeholder heads, and turning it into structured information architecture, sprint-ready design systems, and flows that hold up under usability testing, not just in a prototype. I work close to Product, Engineering, and QA, because a design that cannot ship is not a design.</p>
+      <p class="reveal">Outside of enterprise systems, I've designed transport and rental booking apps, internal admin dashboards, and healthcare/fintech case studies. I use AI tools like Figma AI and ChatGPT to move faster from idea to validated flow, not to skip the thinking.</p>
+    </div>
+    <div class="pillars reveal">
+      <div class="card soft"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1" fill="currentColor" stroke="none"/></svg></div><h4 style="font-size:15px;margin-bottom:4px;">Systems thinking</h4><p style="font-size:14px;color:var(--ink-soft);margin:0;">Translating role-based, permission-driven business logic into intuitive, scalable UX.</p></div>
+      <div class="card soft"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.4l2.6 2.6L16 9"/></svg></div><h4 style="font-size:15px;margin-bottom:4px;">End-to-end ownership</h4><p style="font-size:14px;color:var(--ink-soft);margin:0;">From research and IA through wireframes, prototypes, usability testing, to dev handoff.</p></div>
+      <div class="card soft"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></div><h4 style="font-size:15px;margin-bottom:4px;">Multi-platform craft</h4><p style="font-size:14px;color:var(--ink-soft);margin:0;">Designing coherently across Web, Mobile, Tablet, Smart TV, STB and DTH.</p></div>
+      <div class="card soft"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16.5 20v-1.3a3.3 3.3 0 0 0-3.3-3.3h-4.4A3.3 3.3 0 0 0 5.5 18.7V20"/><circle cx="10.5" cy="7.8" r="2.9"/><path d="M18.5 20v-1.1a2.9 2.9 0 0 0-2-2.7"/><path d="M15.3 8.1a2.9 2.9 0 0 1 0 5.6"/></svg></div><h4 style="font-size:15px;margin-bottom:4px;">Cross-functional delivery</h4><p style="font-size:14px;color:var(--ink-soft);margin:0;">Partnering with Product, Engineering and QA to ship sprint-ready, production-grade design.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="kicker"><span class="num">02</span> Selected Work <span class="line"></span></div>
+      <h2>Five systems, five kinds of complexity.</h2>
+      <p>Each project below is a real engagement from my professional experience, not a speculative exercise. Full case studies are below the cards.</p>
+    </div>
+    <div class="grid-2 reveal">
+      <div class="work-card featured">
+        <span class="badge badge-purple">Featured &middot; Form Systems</span>
+        <h3>Designing Channel Creation: 150 Fields, One System</h3>
+        <p class="wc-desc">A one-line requirement grown into a validated, 150-field stepper system, co-designed with Solution Architecture and Engineering, reused across Create, Update, Delete and Recording.</p>
+        <div class="tag-row" style="margin-bottom:18px;"><span class="badge badge-gray">Solution Design</span><span class="badge badge-gray">Information Architecture</span><span class="badge badge-gray">Form Systems</span></div>
+        <a href="#case-channel" class="work-link">Read the case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="work-card featured">
+        <span class="badge badge-purple">Featured &middot; Audit UX</span>
+        <h3>Redesigning the Enterprise Audit Experience</h3>
+        <p class="wc-desc">An 11-step manual audit investigation, spread across a disconnected module, redesigned into a 6-step contextual Version History and Comparison workflow.</p>
+        <div class="tag-row" style="margin-bottom:18px;"><span class="badge badge-gray">UX Research</span><span class="badge badge-gray">Information Architecture</span><span class="badge badge-gray">Interaction Design</span></div>
+        <a href="#case-audit" class="work-link">Read the case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+    <div class="grid-3 reveal" style="margin-top:20px;">
+      <div class="work-card">
+        <span class="badge badge-blue">Enterprise &middot; OTT</span>
+        <h3 style="font-size:18px;">Operator Console for Enterprise OTT</h3>
+        <p class="wc-desc">A permission-driven console spanning 20+ modules, extended to device-side screens across five platforms.</p>
+        <div class="tag-row" style="margin-bottom:18px;"><span class="badge badge-gray">RBAC</span><span class="badge badge-gray">Design Systems</span></div>
+        <a href="#case-ott" class="work-link">Read the case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="work-card">
+        <span class="badge badge-amber">Mobility &middot; Booking</span>
+        <h3 style="font-size:18px;">Fleet &amp; Vehicle Rental Platform</h3>
+        <p class="wc-desc">Self-service booking apps plus the back-office CRM operators use to manage fleets and rentals.</p>
+        <div class="tag-row" style="margin-bottom:18px;"><span class="badge badge-gray">Mobile-first</span><span class="badge badge-gray">Research</span></div>
+        <a href="#case-fleet" class="work-link">Read the case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="work-card">
+        <span class="badge badge-green">Internal Tools</span>
+        <h3 style="font-size:18px;">Admin Dashboards &amp; Internal Consoles</h3>
+        <p class="wc-desc">Rebuilding trust in a product's design process by resolving recurring UX pain points release over release.</p>
+        <div class="tag-row" style="margin-bottom:18px;"><span class="badge badge-gray">Usability Testing</span><span class="badge badge-gray">IA</span></div>
+        <a href="#case-admin" class="work-link">Read the case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+    <div class="card reveal" style="margin-top:24px; display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap;">
+      <div>
+        <span class="badge badge-purple" style="margin-bottom:10px;">Outside client work</span>
+        <p style="margin:0; font-size:14.5px; color:var(--ink-soft); max-width:640px;">I also design self-initiated concept projects to practice UX outside what my day job covers. <a href="#case-spendlane" style="color:var(--purple-dark); font-weight:700;">See Spendlane, a fintech spend-management concept &darr;</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDY 01 -->
+<section class="case" id="case-channel">
+  <div class="wrap">
+    <div class="case-head reveal">
+      <div>
+        <div class="kicker"><span class="num">03</span> Case Study 01 <span class="line"></span></div>
+        <h2>Designing Channel Creation: From a One-Line Requirement to 150 Fields</h2>
+      </div>
+    </div>
+    <div class="case-facts reveal">
+      <div class="cf-item"><div class="cf-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20.6 12.9 12.9 20.6a2 2 0 0 1-2.8 0L3 13.5V4h9.5l8.1 8.1a2 2 0 0 1 0 2.8Z"/><circle cx="7.5" cy="8.5" r="1.2" fill="currentColor" stroke="none"/></svg></div><div><span class="cf-label">Client</span><span class="cf-val">Enterprise OTT Platform</span></div></div>
+      <div class="cf-item"><div class="cf-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.4"/><path d="M5.5 20c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5"/></svg></div><div><span class="cf-label">Role</span><span class="cf-val">UX Designer, UX Architect, UI Designer</span></div></div>
+      <div class="cf-item"><div class="cf-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8v8l-9 5-9-5V8l9-5 9 5Z"/><path d="M3 8l9 5 9-5"/><path d="M12 13v8"/></svg></div><div><span class="cf-label">Platform</span><span class="cf-val">Operator Console (Web)</span></div></div>
+      <div class="cf-item"><div class="cf-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3.2 2"/></svg></div><div><span class="cf-label">Duration</span><span class="cf-val">Multi-Release, Ongoing</span></div></div>
+    </div>
+    <div class="case-block reveal">
+      <div class="cb-label">Overview</div>
+      <div class="content">
+        <p>Channel Creation began as a single line of requirement, "we need channel creation," with no field list, no wireframe, and no spec to inherit. Working session by session with a Solution Developer, Solution Architect and Senior Developer, we recognised close to 150 fields the platform actually needed, spanning general metadata, delivery, security, enablers and advertisement, plus entire sub-features like Bouquet Management and Catalogue linking that surfaced along the way.</p>
+        <p>As UX Designer, UX Architect and UI Designer, I turned that discovery into a validated, multi-section stepper with a mandatory Preview before submit, then reused the same pattern for Update, safe Deletion, and a Recording feature added long after the original launch.</p>
+      </div>
+    </div>
+    <div class="case-block reveal">
+      <div class="cb-label">The Challenge</div>
+      <div class="content">
+        <ul>
+          <li>~150 fields cannot live in a single form. Scrolling replaces scanning, and abandonment climbs the moment users lose their place.</li>
+          <li>Because a channel is business-critical, operators needed real confidence before submitting, not a chance to fix mistakes after the fact.</li>
+          <li>Deleting a channel unsafely could orphan live recordings for millions of active viewers if the sequencing was not enforced by the UI itself.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="case-block reveal">
+      <div class="cb-label">Process</div>
+      <div class="content">
+        <div class="process-steps">
+          <div class="p-step"><div class="step-num">01</div><h5>Field Discovery</h5><p>Working sessions with Solution Architecture and Engineering to recognise and name ~150 real fields.</p></div>
+          <div class="p-step"><div class="step-num">02</div><h5>Taxonomy &amp; IA</h5><p>Grouped every field into General, Delivery, Security, Enablers and Advertisement sections.</p></div>
+          <div class="p-step"><div class="step-num">03</div><h5>Stepper &amp; Validation</h5><p>Built a step-by-step flow where Next stays disabled until mandatory fields in that step are complete.</p></div>
+          <div class="p-step"><div class="step-num">04</div><h5>Preview &amp; Confirm</h5><p>Added a mandatory review step plus explicit confirmation before any channel is created.</p></div>
+          <div class="p-step"><div class="step-num">05</div><h5>Reuse &amp; Extend</h5><p>Carried the same pattern into Update, safe Deletion, and the later Recording feature.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="case-block reveal">
+      <div class="cb-label">Outcome</div>
+      <div class="content">
+        <div class="metric-grid">
+          <div class="metric-card"><b>~150 fields</b><div style="font-size:14px;font-weight:700;margin-bottom:4px;">Structured, not scattered</div><p>Every field grouped into five ownable sections instead of one overwhelming form.</p></div>
+          <div class="metric-card"><b>1 pattern</b><div style="font-size:14px;font-weight:700;margin-bottom:4px;">Every lifecycle stage</div><p>Create, Update, Delete and Recording all reuse the same stepper and Preview model.</p></div>
+          <div class="metric-card"><b>12+</b><div style="font-size:14px;font-weight:700;margin-bottom:4px;">Iterations, zero redesigns</div><p>New requirements kept landing across releases without breaking the core pattern.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="case-block reveal">
+      <div class="cb-label">Go Deeper</div>
+      <div class="content">
+        <div class="deep-dive">
+          <div>
+            <div class="dd-kicker">Full Annotated Case Study</div>
+            <h4>Field taxonomy, safety flows and a decade of iteration</h4>
+            <p>The complete breakdown: discovery process, information architecture, annotated Channel Listing, Ingestion and Failure screens, the deletion safety flow, and a gallery of real design iterations.</p>
+          </div>
+          <a href="Designing-Channel-Creation-Case-Study.html" target="_blank" rel="noopener" class="btn btn-purple">Open full case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <a href="#work" class="back-top">&uarr; Back to all work</a>
+  </div>
+</section>
+
+<!-- CASE STUDY 02 -->
+<section class="case" id="case-audit" style="background:var(--bg-soft);">
+  <div class="wrap">
+    <div class="case-head reveal">
+      <div>
+        <div class="kicker"><span class="num">04</span> Case Study 02 <span class="line"></span></div>
+        <h2>Redesigning the Enterprise Audit Experience</h2>
+      </div>
+    </div>
+    <div class="case-facts reveal" style="background:var(--bg);">
+      <div class="cf-item"><div class="cf-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20.6 12.9 12.9 20.6a2 2 0 0 1-2.8 0L3 13.5V4h9.5l8.1 8.1a2 2 0 0 1 0 2.8Z"/><circle cx="7.5" cy="8.5" r="1.2" fill="currentColor" stroke="none"/></svg></div><div><span class="cf-label">Client</span><span class="cf-val">Enterprise OTT Platform</span></div></div>
+      <div class="cf-item"><div class="cf-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.4"/><path d="M5.5 20c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5"/></svg></div><div><span class="cf-label">Role</span><span class="cf-val">UI/UX Designer, end to end</span></div></div>
+      <div class="cf-item"><div class="cf-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8v8l-9 5-9-5V8l9-5 9 5Z"/><path d="M3 8l9 5 9-5"/><path d="M12 13v8"/></svg></div><div><span class="cf-label">Platform</span><span class="cf-val">Operator Console (Web)</span></div></div>
+      <div class="cf-item"><div class="cf-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3.2 2"/></svg></div><div><span class="cf-label">Duration</span><span class="cf-val">4-6 Weeks</span></div></div>
+    </div>
+    <div class="case-block reveal">
+      <div class="cb-label">Overview</div>
+      <div class="content">
+        <p>Every action inside the operator console, publishing a channel, updating a VOD asset, changing a household's entitlement, is recorded as an audit log. But audit history lived in a completely separate module, disconnected from the entity it described, so investigating a change meant leaving the record you were looking at to go find it somewhere else.</p>
+        <p>I led the redesign that moved Version History directly into the entity itself, and introduced a side-by-side Version Comparison view that replaced manual, field-by-field inspection with color-coded, at-a-glance differencing.</p>
+      </div>
+    </div>
+    <div class="case-block reveal">
+      <div class="cb-label">The Challenge</div>
+      <div class="content">
+        <ul>
+          <li>Investigating a single change meant leaving the entity, remembering its Entity ID, and rebuilding filters from memory before a single result appeared.</li>
+          <li>Comparing two versions meant opening two separate audit records and manually holding both in your head. There was no comparison feature at all.</li>
+          <li>This eleven-step investigation was the single most time-consuming, most frequently repeated task for the operations team.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="case-block reveal">
+      <div class="cb-label">Process</div>
+      <div class="content">
+        <div class="process-steps">
+          <div class="p-step"><div class="step-num">01</div><h5>Discovery</h5><p>Stakeholder discussions, support-team shadowing and developer workshops surfaced that operators never start from the Audit module. They need history while already viewing an entity.</p></div>
+          <div class="p-step"><div class="step-num">02</div><h5>Heuristic Audit</h5><p>Evaluated the existing flow against usability heuristics. Recognition over recall and information hierarchy scored lowest.</p></div>
+          <div class="p-step"><div class="step-num">03</div><h5>IA &amp; Flow Redesign</h5><p>Moved Version History into Entity Details, collapsing an 11-step investigation into 6 steps.</p></div>
+          <div class="p-step"><div class="step-num">04</div><h5>Wireframing</h5><p>Explored horizontal cards, a modal, and a full-page comparison before settling on an in-context History and Compare pattern.</p></div>
+          <div class="p-step"><div class="step-num">05</div><h5>Visual &amp; Interaction</h5><p>Designed the Added, Updated, Removed, Unchanged comparison system, with Compare disabled until exactly two versions are selected.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="case-block reveal">
+      <div class="cb-label">Outcome</div>
+      <div class="content">
+        <div class="metric-grid">
+          <div class="metric-card"><b>11 to 6</b><div style="font-size:14px;font-weight:700;margin-bottom:4px;">Investigation steps</div><p>Cut nearly in half by removing every unnecessary module switch.</p></div>
+          <div class="metric-card"><b>0</b><div style="font-size:14px;font-weight:700;margin-bottom:4px;">Manual memorization</div><p>Manual field-by-field comparison replaced with instant, color-coded differencing.</p></div>
+          <div class="metric-card"><b>1 pattern</b><div style="font-size:14px;font-weight:700;margin-bottom:4px;">Reusable across entities</div><p>The same Version History and Compare pattern was designed to scale across Channels, VOD, Households and Catalogs.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="case-block reveal">
+      <div class="cb-label">Go Deeper</div>
+      <div class="content">
+        <div class="deep-dive">
+          <div>
+            <div class="dd-kicker">Full Annotated Case Study</div>
+            <h4>Every screen, decision and rejected idea</h4>
+            <p>The complete screen-by-screen breakdown: research, information architecture, hand-drawn wireframes, rejected concepts, and the fully annotated final UI.</p>
+          </div>
+          <a href="Redesigning-the-Enterprise-Audit-Experience.html" target="_blank" rel="noopener" class="btn btn-purple">Open full case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <a href="#work" class="back-top">&uarr; Back to all work</a>
+  </div>
+</section>
+
+<!-- CASE STUDY 03 -->
+<section class="case" id="case-ott">
+  <div class="wrap">
+    <div class="case-head reveal">
+      <div>
+        <div class="kicker"><span class="num">05</span> Case Study 03 <span class="line"></span></div>
+        <h2>Designing the Operator's Control Room for Enterprise OTT</h2>
+      </div>
+    </div>
+    <div class="case-facts reveal">
+      <div class="cf-item"><div class="cf-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20.6 12.9 12.9 20.6a2 2 0 0 1-2.8 0L3 13.5V4h9.5l8.1 8.1a2 2 0 0 1 0 2.8Z"/><circle cx="7.5" cy="8.5" r="1.2" fill="currentColor" stroke="none"/></svg></div><div><span class="cf-label">Client</span><span class="cf-val">Enterprise OTT Platform</span></div></div>
+      <div class="cf-item"><div class="cf-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.4"/><path d="M5.5 20c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5"/></svg></div><div><span class="cf-label">Role</span><span class="cf-val">UI/UX Designer, end to end</span></div></div>
+      <div class="cf-item"><div class="cf-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8v8l-9 5-9-5V8l9-5 9 5Z"/><path d="M3 8l9 5 9-5"/><path d="M12 13v8"/></svg></div><div><span class="cf-label">Platform</span><span class="cf-val">Web, Mobile, STB, Smart TV, DTH</span></div></div>
+      <div class="cf-item"><div class="cf-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3.2 2"/></svg></div><div><span class="cf-label">Duration</span><span class="cf-val">Jun 2024 to Present</span></div></div>
+    </div>
+    <div class="case-block reveal">
+      <div class="cb-label">Overview</div>
+      <div class="content">
+        <p>The operator console is the system pay-TV and OTT operators use to run their business: publishing content, controlling who has access to what, provisioning devices, and configuring the platform itself. It is built for admins, not consumers, but the stakes are consumer-facing. A misconfigured entitlement can lock a paying subscriber out of content they own.</p>
+        <p>I own UX end to end here, from the enterprise admin console down to the device-side screens it ultimately controls, across STB, Mobile, Tablet, Smart TV, and OTT. Two specific modules from this engagement are broken out in full detail as <a href="#case-channel" style="color:var(--purple-dark);font-weight:700;">Case Study 01 &uarr;</a> (Channel Creation) and <a href="#case-audit" style="color:var(--purple-dark);font-weight:700;">Case Study 02 &uarr;</a> (Version History and Comparison).</p>
+      </div>
+    </div>
+    <div class="case-block reveal">
+      <div class="cb-label">The Challenge</div>
+      <div class="content">
+        <p>The console had grown to 20+ modules, each carrying its own business logic and role-based permission rules. That growth created three compounding problems for the people who used it every day.</p>
+        <ul>
+          <li>High cognitive load: dense data tables and permission-gated actions with little consistency in how they were presented module to module.</li>
+          <li>Steep onboarding: new admin users struggled to build a mental model of where an action lived and who was allowed to take it.</li>
+          <li>Slow, repetitive design-to-dev handoff: similar patterns (status indicators, permission gates, action tables) were being redesigned from scratch for every new module.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="case-block reveal">
+      <div class="cb-label">Process</div>
+      <div class="content">
+        <div class="process-steps">
+          <div class="p-step"><div class="step-num">01</div><h5>Discovery</h5><p>Unpacked entitlement models and RBAC matrices with Product and Engineering. Audited existing modules for inconsistency.</p></div>
+          <div class="p-step"><div class="step-num">02</div><h5>IA</h5><p>Re-grouped navigation around admin mental models (content, entitlement, device, configuration) instead of backend architecture.</p></div>
+          <div class="p-step"><div class="step-num">03</div><h5>Design System</h5><p>Built reusable, sprint-ready components for tables, permission-gated actions and status states, adopted across 20+ modules.</p></div>
+          <div class="p-step"><div class="step-num">04</div><h5>Prototyping</h5><p>Interactive Figma prototypes for complex flows: content publishing, entitlement assignment, device provisioning.</p></div>
+          <div class="p-step"><div class="step-num">05</div><h5>Usability Testing</h5><p>Iterative rounds with admin users to validate and refine task flows before dev handoff.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="case-block reveal">
+      <div class="cb-label">Device-Side Design</div>
+      <div class="content">
+        <p>Beyond the console, I designed the end-user-facing screens those admin decisions ultimately drive, adapting the same underlying patterns for remote-control navigation on STB and Smart TV, and touch interaction on Mobile and Tablet, so an entitlement or content rule looks and behaves consistently no matter where a subscriber encounters it.</p>
+      </div>
+    </div>
+    <div class="case-block reveal">
+      <div class="cb-label">Outcome</div>
+      <div class="content">
+        <div class="metric-grid">
+          <div class="metric-card"><b>20+</b><div style="font-size:14px;font-weight:700;margin-bottom:4px;">Modules unified</div><p>Complex business rules and permissions translated into structured, consistent UX flows across admin dashboards.</p></div>
+          <div class="metric-card"><b>↑</b><div style="font-size:14px;font-weight:700;margin-bottom:4px;">Task completion</div><p>Iterative usability testing across admin dashboards improved completion rates release over release.</p></div>
+          <div class="metric-card"><b>↓</b><div style="font-size:14px;font-weight:700;margin-bottom:4px;">Design-to-dev time</div><p>Reusable design system components cut redundant back-and-forth across 20+ modules.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <a href="#work" class="back-top">&uarr; Back to all work</a>
+  </div>
+</section>
+
+<!-- CASE STUDY 04 -->
+<section class="case" id="case-fleet" style="background:var(--bg-soft);">
+  <div class="wrap">
+    <div class="case-head reveal">
+      <div>
+        <div class="kicker"><span class="num">06</span> Case Study 04 <span class="line"></span></div>
+        <h2>Getting People from "I Need a Ride" to Booked, Fast</h2>
+      </div>
+    </div>
+    <div class="case-facts reveal" style="background:var(--bg);">
+      <div class="cf-item"><div class="cf-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20.6 12.9 12.9 20.6a2 2 0 0 1-2.8 0L3 13.5V4h9.5l8.1 8.1a2 2 0 0 1 0 2.8Z"/><circle cx="7.5" cy="8.5" r="1.2" fill="currentColor" stroke="none"/></svg></div><div><span class="cf-label">Client</span><span class="cf-val">Dogma Systems India</span></div></div>
+      <div class="cf-item"><div class="cf-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.4"/><path d="M5.5 20c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5"/></svg></div><div><span class="cf-label">Role</span><span class="cf-val">UI/UX Designer</span></div></div>
+      <div class="cf-item"><div class="cf-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8v8l-9 5-9-5V8l9-5 9 5Z"/><path d="M3 8l9 5 9-5"/><path d="M12 13v8"/></svg></div><div><span class="cf-label">Platform</span><span class="cf-val">Web &amp; Mobile</span></div></div>
+      <div class="cf-item"><div class="cf-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3.2 2"/></svg></div><div><span class="cf-label">Duration</span><span class="cf-val">Aug 2022 to Jun 2024</span></div></div>
+    </div>
+    <div class="case-block reveal">
+      <div class="cb-label">Overview</div>
+      <div class="content">
+        <p>Dogma Systems builds transport and vehicle rental products: self-service booking apps for riders (scooters, self-drive cars) and the CRM/rental-management tools operators use behind the scenes. I designed across both sides of that marketplace, including a scooter self-booking app, a self-drive rental app, and the operator-facing rental CRM.</p>
+      </div>
+    </div>
+    <div class="case-block reveal">
+      <div class="cb-label">The Challenge</div>
+      <div class="content">
+        <p>Two very different users, two very different pressures. Riders wanted to go from "I need a vehicle" to booked in as few taps as possible, with real-time confidence in availability. Rental operators needed a CRM to manage fleets, bookings and logistics without a training manual, and many were juggling it alongside phone and walk-in bookings.</p>
+      </div>
+    </div>
+    <div class="case-block reveal">
+      <div class="cb-label">Process</div>
+      <div class="content">
+        <div class="process-steps">
+          <div class="p-step"><div class="step-num">01</div><h5>User Interviews</h5><p>Talked to end users and operators to ground feature decisions in real booking friction, not assumptions.</p></div>
+          <div class="p-step"><div class="step-num">02</div><h5>Personas &amp; Analysis</h5><p>Benchmarked against ride-share and rental apps to prioritize what actually mattered.</p></div>
+          <div class="p-step"><div class="step-num">03</div><h5>Information Architecture</h5><p>Simplified the booking flow and the CRM sitemap so both sides of the product stayed legible.</p></div>
+          <div class="p-step"><div class="step-num">04</div><h5>Responsive Prototypes</h5><p>Mobile-first booking flows and responsive web CRM dashboards for operators.</p></div>
+          <div class="p-step"><div class="step-num">05</div><h5>Handoff</h5><p>Detailed design specs partnered with developers and QA for accurate implementation.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="case-block reveal">
+      <div class="cb-label">Outcome</div>
+      <div class="content">
+        <div class="metric-grid">
+          <div class="metric-card"><b>3</b><div style="font-size:14px;font-weight:700;margin-bottom:4px;">Products shipped</div><p>Scooter self-booking, self-drive rental, and CRM tooling all shipped with responsive, user-tested flows.</p></div>
+          <div class="metric-card"><b>↓</b><div style="font-size:14px;font-weight:700;margin-bottom:4px;">Booking friction</div><p>Streamlined browse, select, confirm, pick-up flow reduced steps to complete a booking.</p></div>
+          <div class="metric-card"><b>↓</b><div style="font-size:14px;font-weight:700;margin-bottom:4px;">Rework</div><p>Close developer and QA partnership meant user flows shipped accurately, with minimal rework.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <a href="#work" class="back-top">&uarr; Back to all work</a>
+  </div>
+</section>
+
+<!-- CASE STUDY 05 -->
+<section class="case" id="case-admin">
+  <div class="wrap">
+    <div class="case-head reveal">
+      <div>
+        <div class="kicker"><span class="num">07</span> Case Study 05 <span class="line"></span></div>
+        <h2>Rebuilding Trust in a Product's Design Process</h2>
+      </div>
+    </div>
+    <div class="case-facts reveal">
+      <div class="cf-item"><div class="cf-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20.6 12.9 12.9 20.6a2 2 0 0 1-2.8 0L3 13.5V4h9.5l8.1 8.1a2 2 0 0 1 0 2.8Z"/><circle cx="7.5" cy="8.5" r="1.2" fill="currentColor" stroke="none"/></svg></div><div><span class="cf-label">Client</span><span class="cf-val">ACIL Technologies</span></div></div>
+      <div class="cf-item"><div class="cf-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.4"/><path d="M5.5 20c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5"/></svg></div><div><span class="cf-label">Role</span><span class="cf-val">UI/UX Designer</span></div></div>
+      <div class="cf-item"><div class="cf-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8v8l-9 5-9-5V8l9-5 9 5Z"/><path d="M3 8l9 5 9-5"/><path d="M12 13v8"/></svg></div><div><span class="cf-label">Platform</span><span class="cf-val">Web (Admin Panels)</span></div></div>
+      <div class="cf-item"><div class="cf-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3.2 2"/></svg></div><div><span class="cf-label">Duration</span><span class="cf-val">Dec 2020 to Jul 2022</span></div></div>
+    </div>
+    <div class="case-block reveal">
+      <div class="cb-label">Overview</div>
+      <div class="content">
+        <p>ACIL's internal dashboards and admin panels were used daily by internal teams and client stakeholders, but recurring UX pain points, flagged repeatedly through client feedback, had quietly eroded confidence in the design process itself.</p>
+      </div>
+    </div>
+    <div class="case-block reveal">
+      <div class="cb-label">The Challenge</div>
+      <div class="content">
+        <p>The problem was not a single broken screen. It was a pattern: confusing task flows and unclear information hierarchy kept resurfacing across release cycles, and stakeholders had started to expect it rather than report it.</p>
+      </div>
+    </div>
+    <div class="case-block reveal">
+      <div class="cb-label">Process</div>
+      <div class="content">
+        <div class="process-steps process-steps-4">
+          <div class="p-step"><div class="step-num">01</div><h5>Sitemap Audit</h5><p>Defined clear sitemap structures and applied consistent UX best practices across interfaces.</p></div>
+          <div class="p-step"><div class="step-num">02</div><h5>Usability Testing</h5><p>Ran testing across release cycles rather than once, to catch drift early.</p></div>
+          <div class="p-step"><div class="step-num">03</div><h5>Pain-Point Triage</h5><p>Took client-reported issues directly into the design backlog, resolved and shipped visibly.</p></div>
+          <div class="p-step"><div class="step-num">04</div><h5>Iteration</h5><p>Refined task flows release over release based on what testing and feedback actually showed.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="case-block reveal">
+      <div class="cb-label">Outcome</div>
+      <div class="content">
+        <div class="metric-grid">
+          <div class="metric-card"><b>↑</b><div style="font-size:14px;font-weight:700;margin-bottom:4px;">Completion rates</div><p>Task flows and completion rates improved across release cycles.</p></div>
+          <div class="metric-card"><b>Restored</b><div style="font-size:14px;font-weight:700;margin-bottom:4px;">Stakeholder trust</div><p>Visibly resolving recurring pain points rebuilt confidence in the design process.</p></div>
+          <div class="metric-card"><b>Cleaner</b><div style="font-size:14px;font-weight:700;margin-bottom:4px;">Information architecture</div><p>Consistent sitemap structure reduced confusion across the product's admin surfaces.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <a href="#work" class="back-top">&uarr; Back to all work</a>
+  </div>
+</section>
+
+<!-- CONCEPT PROJECT -->
+<section class="case" id="case-spendlane" style="background:var(--bg-soft);">
+  <div class="wrap">
+    <div class="case-head reveal">
+      <div>
+        <div class="kicker"><span class="num">08</span> Concept Project <span class="line"></span></div>
+        <h2>Designing Spendlane: Budget Clarity for Small Teams</h2>
+      </div>
+    </div>
+    <div class="case-facts reveal">
+      <div class="cf-item"><div class="cf-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20.6 12.9 12.9 20.6a2 2 0 0 1-2.8 0L3 13.5V4h9.5l8.1 8.1a2 2 0 0 1 0 2.8Z"/><circle cx="7.5" cy="8.5" r="1.2" fill="currentColor" stroke="none"/></svg></div><div><span class="cf-label">Client</span><span class="cf-val">None &mdash; self-initiated, not client work</span></div></div>
+      <div class="cf-item"><div class="cf-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.4"/><path d="M5.5 20c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5"/></svg></div><div><span class="cf-label">Role</span><span class="cf-val">UI/UX Designer, solo</span></div></div>
+      <div class="cf-item"><div class="cf-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8v8l-9 5-9-5V8l9-5 9 5Z"/><path d="M3 8l9 5 9-5"/><path d="M12 13v8"/></svg></div><div><span class="cf-label">Platform</span><span class="cf-val">Web (Figma + coded prototype)</span></div></div>
+      <div class="cf-item"><div class="cf-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3.2 2"/></svg></div><div><span class="cf-label">Duration</span><span class="cf-val">Personal project, 2026</span></div></div>
+    </div>
+    <div class="case-block reveal">
+      <div class="cb-label">Overview</div>
+      <div class="content">
+        <p>Most of my professional work lives in enterprise operator consoles and internal admin tools, so I built Spendlane, a concept spend-management product for small business teams, to practice fintech UX end to end: budget visibility, card-level controls, and approval flows people can actually trust.</p>
+        <p>There's no company behind it and no real users yet. Every screen, flow and design decision is my own, designed solo in Figma from a blank page.</p>
+      </div>
+    </div>
+    <div class="case-block reveal">
+      <div class="cb-label">The Challenge</div>
+      <div class="content">
+        <ul>
+          <li>Once a company has more than one card-holder, budgets get tracked reactively, in spreadsheets after the statement arrives, not while spending is happening.</li>
+          <li>Approval requests sit in an inbox with no budget context, so approving feels like a guess rather than a decision.</li>
+          <li>Cards are rarely frozen or adjusted individually when circumstances change, because doing so isn't a one-click action.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="case-block reveal">
+      <div class="cb-label">Process</div>
+      <div class="content">
+        <div class="process-steps process-steps-3">
+          <div class="p-step"><div class="step-num">01</div><h5>Status at a Glance</h5><p>A dashboard that answers "am I on budget" in under two seconds.</p></div>
+          <div class="p-step"><div class="step-num">02</div><h5>Context Travels</h5><p>Every approval carries inline budget context, so saying yes or no is a fast, confident call.</p></div>
+          <div class="p-step"><div class="step-num">03</div><h5>Control at the Card</h5><p>Freezing a card or adjusting a limit is a single toggle, not a support ticket.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="case-block reveal">
+      <div class="cb-label">Outcome</div>
+      <div class="content">
+        <div class="metric-grid">
+          <div class="metric-card"><b>11 screens</b><div style="font-size:14px;font-weight:700;margin-bottom:4px;">A full product surface</div><p>From onboarding to an AI assistant, spanning admin, employee, and mobile, not just a dashboard demo.</p></div>
+          <div class="metric-card"><b>3 roles</b><div style="font-size:14px;font-weight:700;margin-bottom:4px;">Not one dashboard, three</div><p>Admin, employee, and a mobile flow, each built around what that person actually needs to see.</p></div>
+          <div class="metric-card"><b>0 real users</b><div style="font-size:14px;font-weight:700;margin-bottom:4px;">Untested, by design</div><p>No usage data to report yet, usability testing with real finance admins is the honest next step.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="case-block reveal">
+      <div class="cb-label">Go Deeper</div>
+      <div class="content">
+        <div class="deep-dive">
+          <div>
+            <div class="dd-kicker">Full Case Study</div>
+            <h4>Onboarding, dashboard, budgets, card controls, approvals, subscriptions, an AI assistant, and the employee-facing screens behind them</h4>
+            <p>The complete write-up: problem framing, design principles, 11 screens across admin, employee, and mobile with annotated decisions, and what I'd test next with real users.</p>
+          </div>
+          <a href="Designing-Spendlane-Case-Study.html" target="_blank" rel="noopener" class="btn btn-purple">Open full case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M9 7h8v8"/></svg></a>
+          </div>
+      </div>
+    </div>
+    <a href="#work" class="back-top">&uarr; Back to all work</a>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="kicker"><span class="num">09</span> Experience <span class="line"></span></div>
+      <h2>Where the work happened</h2>
+    </div>
+    <div class="exp-list">
+      <div class="exp-item reveal">
+        <div class="when">Jun 2024 - Present</div>
+        <div>
+          <h4>UI/UX Designer</h4>
+          <div class="role-co">Irdeto Technologies</div>
+          <ul>
+            <li>Own UX end to end across an enterprise OTT operator console and its connected device experiences: STB, Mobile, Tablet, Smart TV, DTH.</li>
+            <li>Built and maintain the design system powering 20+ admin modules.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="exp-item reveal">
+        <div class="when">Aug 2022 - Jun 2024</div>
+        <div>
+          <h4>UI/UX Designer</h4>
+          <div class="role-co">Dogma Systems India</div>
+          <ul>
+            <li>Designed rider-facing booking apps (scooter self-service, self-drive rental) and the operator-facing rental CRM.</li>
+            <li>Worked mobile-first across both sides of the marketplace, from user interviews through to dev handoff.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="exp-item reveal">
+        <div class="when">Dec 2020 - Jul 2022</div>
+        <div>
+          <h4>UI/UX Designer</h4>
+          <div class="role-co">ACIL Technologies</div>
+          <ul>
+            <li>Rebuilt trust in a product's design process by tracing recurring client-reported pain points back to sitemap and task-flow issues.</li>
+            <li>Fixed them release over release, improving completion rates across admin dashboards.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" style="background:var(--bg-soft);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="kicker"><span class="num">10</span> Skills <span class="line"></span></div>
+      <h2>Tools of the trade</h2>
+    </div>
+    <div class="grid-5">
+      <div class="card reveal">
+        <h4>Design &amp; Prototyping</h4>
+        <div class="tag-row">
+          <span class="badge badge-gray">Figma</span><span class="badge badge-gray">FigJam</span><span class="badge badge-gray">Adobe XD</span><span class="badge badge-gray">Photoshop</span><span class="badge badge-gray">Illustrator</span>
+        </div>
+      </div>
+      <div class="card reveal">
+        <h4>UX Process</h4>
+        <div class="tag-row">
+          <span class="badge badge-gray">User Research</span><span class="badge badge-gray">Wireframing</span><span class="badge badge-gray">Usability Testing</span><span class="badge badge-gray">Information Architecture</span><span class="badge badge-gray">Design Systems</span>
+        </div>
+      </div>
+      <div class="card reveal">
+        <h4>Platforms</h4>
+        <div class="tag-row">
+          <span class="badge badge-gray">Web</span><span class="badge badge-gray">Mobile</span><span class="badge badge-gray">Tablet</span><span class="badge badge-gray">Smart TV</span><span class="badge badge-gray">STB / DTH</span>
+        </div>
+      </div>
+      <div class="card reveal">
+        <h4>Delivery</h4>
+        <div class="tag-row">
+          <span class="badge badge-gray">Dev Handoff</span><span class="badge badge-gray">Design QA</span><span class="badge badge-gray">Cross-functional Collaboration</span><span class="badge badge-gray">Agile Delivery</span>
+        </div>
+      </div>
+      <div class="card reveal">
+        <h4>AI &amp; Emerging Tools</h4>
+        <div class="tag-row">
+          <span class="badge badge-gray">Figma AI</span><span class="badge badge-gray">Figma MCP</span><span class="badge badge-gray">Claude</span><span class="badge badge-gray">ChatGPT</span><span class="badge badge-gray">GitHub Copilot</span><span class="badge badge-gray">Lovable</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT / FOOTER -->
+<footer id="contact">
+  <div class="wrap contact-inner">
+    <div class="kicker"><span class="num">11</span> Contact <span class="line"></span></div>
+    <h2>Let's build something worth using</h2>
+    <p>Open to UI/UX roles and collaborations. The fastest way to reach me is email.</p>
+    <div class="contact-actions">
+      <a href="mailto:bhardwajprashakha14@gmail.com" class="btn btn-light"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><span>bhardwajprashakha14@gmail.com</span></a>
+    </div>
+    <div class="contact-location"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12Z"/><circle cx="12" cy="9" r="2.4"/></svg><span>Based in Noida, India</span></div>
+    <div class="social-row">
+      <a href="https://www.linkedin.com/in/prashakha-bhardwaj-ux/" target="_blank" rel="noopener" class="social-pill">
+        <span class="social-mono">Li</span><span>LinkedIn</span>
+      </a>
+      <a href="https://www.behance.net/prashakbhardwa" target="_blank" rel="noopener" class="social-pill">
+        <span class="social-mono">Be</span><span>Behance</span>
+      </a>
+      <a href="https://medium.com/@bhardwajprashakha14" target="_blank" rel="noopener" class="social-pill">
+        <span class="social-mono">Me</span><span>Medium</span>
+      </a>
+    </div>
+    <div class="foot-bottom">
+      <span>Prashakha Bhardwaj</span>
+      <div class="foot-links">
+        <span>UI/UX Designer</span>
+        <span>Built and maintained by hand</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const secIds = ["hero","about","work","case-channel","case-audit","case-ott","case-fleet","case-admin","case-spendlane","experience","skills","contact"];
+const sections = secIds.map(id => document.getElementById(id)).filter(Boolean);
+const dots = document.querySelectorAll('.it-dot');
+const navLinks = document.querySelectorAll('#topnav .nav-links a');
+const progress = document.getElementById('progress');
+const topnav = document.getElementById('topnav');
+const totop = document.getElementById('totop');
+
+const navMap = {
+  "about":"about",
+  "work":"work","case-channel":"work","case-audit":"work","case-ott":"work","case-fleet":"work","case-admin":"work","case-spendlane":"work",
+  "experience":"experience",
+  "skills":"skills"
+};
+
+function onScroll(){
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  progress.style.width = (docHeight > 0 ? (scrollTop / docHeight) * 100 : 0) + '%';
+
+  topnav.classList.toggle('scrolled', scrollTop > 8);
+  totop.classList.toggle('show', scrollTop > 500);
+
+  const pos = scrollTop + window.innerHeight * 0.35;
+  let activeIndex = 0;
+  for(let i = 0; i < sections.length; i++){
+    if(sections[i].offsetTop <= pos) activeIndex = i;
+  }
+  dots.forEach((d,i) => d.classList.toggle('active', i === activeIndex));
+
+  const activeId = sections[activeIndex] ? sections[activeIndex].id : null;
+  const navKey = navMap[activeId] || null;
+  navLinks.forEach(link => {
+    link.classList.toggle('active', navKey !== null && link.getAttribute('href') === '#' + navKey);
+  });
+}
+window.addEventListener('scroll', onScroll, {passive:true});
+onScroll();
+
+dots.forEach(dot => {
+  dot.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.getElementById(dot.dataset.target);
+    if(target) target.scrollIntoView({behavior:'smooth'});
+  });
+});
+
+const revealEls = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('in');
+      io.unobserve(entry.target);
+    }
+  });
+}, {threshold:0.12, rootMargin:'0px 0px -60px 0px'});
+revealEls.forEach(el => io.observe(el));
+</script>
+</body>
+</html>
