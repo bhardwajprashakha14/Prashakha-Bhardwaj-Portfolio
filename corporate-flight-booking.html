@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Policy Aware Corporate Flight Booking | Prashakha Bhardwaj</title>
+<meta name="description" content="Concept case study for a desktop and mobile flight booking flow that shows policy, approval and visa risks while employees compare flights.">
+<meta property="og:title" content="Policy Aware Corporate Flight Booking">
+<meta property="og:description" content="Concept case study for a desktop and mobile flight booking flow that shows policy, approval and visa risks while employees compare flights.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%23141413'/%3E%3Ctext x='16' y='22' font-family='Georgia' font-style='italic' font-size='18' fill='%23F4F2EE' text-anchor='middle'%3Ep%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+<header class="nav">
+  <div class="wrap">
+    <a href="../index.html" class="brand"><span class="mark">p</span>Prashakha Bhardwaj</a>
+    <nav class="nav-links" aria-label="Site">
+      <a href="../index.html#work">Work</a>
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#experience">Experience</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+    <a class="btn btn-line" href="../Prashakha-Bhardwaj-Resume.pdf" target="_blank" rel="noopener">Resume</a>
+  </div>
+</header>
+<main>
+<div class="cs-hero"><div class="wrap">
+<a class="back" href="../index.html#work">← All work</a>
+<div class="kicker rv"><b>Case study 04</b> Corporate travel design challenge</div>
+<h1 class="h-xl rv">Policy aware <em>corporate flight</em> booking</h1>
+<p class="lede rv">Booking a flight for work is different from booking a holiday. The cheapest or fastest flight can still be the wrong choice if it breaks company policy, needs approval, or uses a route the traveller's visa doesn't cover. This flow shows those risks on each flight while people compare options.</p>
+<div class="cs-facts rv"><div><span>My role</span><b>UI/UX designer, working alone</b></div><div><span>Type</span><b>Design challenge concept</b></div><div><span>Platforms</span><b>Desktop (1440) and mobile (390)</b></div><div><span>Scope</span><b>4 core screens, states, design system and prototype</b></div><div><span>Tools</span><b>Figma</b></div></div>
+<p class="cs-note rv"><b>Note</b><span>This was a design challenge. Voyalo is a placeholder brand and all flight data comes from the brief. About 6 minutes to read.</span></p>
+<div class="cs-cover full bg-navy rv"><img src="../assets/img/flight-dribbble-1-search-results.webp" alt="Policy-aware flight search results on desktop"></div>
+</div></div>
+<div class="wrap"><div class="cs"><nav class="toc" aria-label="On this page"><p>On this page</p><a href="#overview"><span>01</span>The challenge</a><a href="#problem"><span>02</span>The problem</a><a href="#principles"><span>03</span>Approach</a><a href="#search"><span>04</span>Search results</a><a href="#flow"><span>05</span>Details to approval</a><a href="#mobile"><span>06</span>Mobile</a><a href="#innovation"><span>07</span>Innovation</a><a href="#system"><span>08</span>States & system</a><a href="#learnings"><span>09</span>Decisions & learnings</a></nav><div><section class="chap" id="overview"><div class="kicker rv"><b>01</b> The challenge</div><h2 class="h2 rv">One traveller, one trip, <em>five imperfect options.</em></h2>
+<div class="prose rv"><p>The brief asked for four screens for an international work trip: search results, flight details, traveller details, and review and approval. They had to work on desktop and mobile, be built from components a developer could use directly, and include one new idea of my own.</p>
+<p>Riya, a senior account manager, needs to fly from Delhi to London for a week of client work. She is booking 12 days ahead, but the policy asks for 14. That means <strong>every option needs approval</strong>, even the ones that follow every other rule.</p></div>
+<figure class="rv"><div class="slide"><img src="../assets/img/flight-03-scenario-policy.webp" alt="Traveller, trip and company travel policy" loading="lazy"></div></figure><figure class="rv"><div class="slide"><img src="../assets/img/flight-04-five-options.webp" alt="Five flight options, each with a catch" loading="lazy"></div><figcaption><span>Every option had a catch. The design had to make each catch clear within a few seconds.</span></figcaption></figure></section>
+<section class="chap" id="problem"><div class="kicker rv"><b>02</b> The problem</div><h2 class="h2 rv">Typical booking flows hide <em>what matters for business travel.</em></h2><div class="cols  rv"><div class="cell"><span class="n">Problem 1</span><h4>Policy shows up too late</h4><p>Approval needs usually appear at checkout, after the traveller has already chosen.</p></div><div class="cell"><span class="n">Problem 2</span><h4>Different risks look the same</h4><p>A policy exception, a long layover and a missing transit visa are different problems, yet they often share one red label.</p></div><div class="cell"><span class="n">Problem 3</span><h4>Managers lack context</h4><p>Approvers see a fare and a reason but not the trade offs, so requests go back and forth.</p></div></div>
+<blockquote class="quote rv">How might we help employees pick a sensible flight that fits policy in a few seconds, and give their manager everything needed to approve it at a glance?</blockquote></section>
+<section class="chap" id="principles"><div class="kicker rv"><b>03</b> Approach</div><h2 class="h2 rv">Four principles guided <em>every screen.</em></h2><div class="cols c2 rv"><div class="cell"><span class="n">Principle 1</span><h4>Answer first, details later</h4><p>Each card shows the flight, the price, whether it needs approval and its biggest catch.</p></div><div class="cell"><span class="n">Principle 2</span><h4>Each risk looks different</h4><p>Policy issues, trade offs, document problems and system errors each have their own icon, label, wording and colour.</p></div><div class="cell"><span class="n">Principle 3</span><h4>Approval with context</h4><p>Before sending, the traveller sees exactly what the manager will receive.</p></div><div class="cell"><span class="n">Principle 4</span><h4>Priorities change by screen size</h4><p>Desktop allows side by side comparison. Mobile shows only what the current step needs.</p></div></div><figure class="rv"><div class="slide"><img src="../assets/img/flight-07-user-flow.webp" alt="User flow from search to a manager-ready request" loading="lazy"></div></figure></section>
+<section class="chap" id="search"><div class="kicker rv"><b>04</b> Search results</div><h2 class="h2 rv">Comparison built for <em>a wide screen.</em></h2><figure class="rv"><div class="slide"><img src="../assets/img/flight-08-search-results.webp" alt="Desktop search results with filters, flight cards and persistent policy context" loading="lazy"></div></figure><figure class="rv"><div class="slide"><img src="../assets/img/flight-09-flight-card-anatomy.webp" alt="Flight card anatomy" loading="lazy"></div><figcaption><span>Every flight card follows the same five level order, so a traveller can read it in three to five seconds.</span></figcaption></figure><figure class="rv"><div class="slide"><img src="../assets/img/flight-10-semantic-system.webp" alt="Semantic system: four kinds of risk, four treatments" loading="lazy"></div><figcaption><span>Each type of risk can be understood from its icon, label and wording, without relying on colour.</span></figcaption></figure></section>
+<section class="chap" id="flow"><div class="kicker rv"><b>05</b> Details to approval</div><h2 class="h2 rv">Send once, with <em>everything the manager needs.</em></h2><div class="pair"><figure class="rv"><div class="slide"><img src="../assets/img/flight-11-flight-details.webp" alt="Flight details and fare choice" loading="lazy"></div></figure><figure class="rv"><div class="slide"><img src="../assets/img/flight-12-traveller-details.webp" alt="Traveller details with document readiness" loading="lazy"></div></figure></div><figure class="rv"><div class="slide"><img src="../assets/img/flight-13-review-approval.webp" alt="Review and request approval" loading="lazy"></div><figcaption><span>Review and approval. The reason, the other options and the cost difference go with the request, so the manager can decide in one go.</span></figcaption></figure></section>
+<section class="chap" id="mobile"><div class="kicker rv"><b>06</b> Mobile</div><h2 class="h2 rv">The same flow, <em>rearranged</em> for mobile.</h2><figure class="rv"><div class="slide"><img src="../assets/img/flight-14-mobile.webp" alt="Mobile screens for search, details, traveller and review" loading="lazy"></div><figcaption><span>On mobile each flight shows its main catch, approval runs top to bottom and details open in bottom sheets.</span></figcaption></figure></section>
+<section class="chap" id="innovation"><div class="kicker rv"><b>07</b> Innovation</div><h2 class="h2 rv">Business Trip <em>Readiness.</em></h2>
+<div class="prose rv"><p>Price and duration don't tell you whether an international work trip is practical. Readiness gives each itinerary a label (Excellent, Fair, Needs attention or Not travel ready) based on connections, arrival time, document checks and policy. Each label is based on clear rules and always lists its reasons.</p></div>
+<figure class="rv"><div class="slide"><img src="../assets/img/flight-15-innovation.webp" alt="Business Trip Readiness component and where it appears" loading="lazy"></div></figure></section>
+<section class="chap" id="system"><div class="kicker rv"><b>08</b> States & system</div><h2 class="h2 rv">When something fails, <em>nothing is lost.</em></h2><figure class="rv"><div class="slide"><img src="../assets/img/flight-16-states.webp" alt="States and edge cases" loading="lazy"></div></figure><figure class="rv"><div class="slide"><img src="../assets/img/flight-17-design-system.webp" alt="Design system built for developer handoff" loading="lazy"></div><figcaption><span>Variables, text styles and components with variants and auto layout, ready for handoff.</span></figcaption></figure></section>
+<section class="chap" id="learnings"><div class="kicker rv"><b>09</b> Decisions & learnings</div><h2 class="h2 rv">Why the design <em>looks the way it does.</em></h2><figure class="rv"><div class="slide"><img src="../assets/img/flight-18-key-decisions.webp" alt="Key design decisions" loading="lazy"></div></figure>
+<div class="prose rv"><p>The next step would be testing with travellers and approvers. I would want to know whether people trust the readiness label, and whether the approval preview really reduces the back and forth.</p></div>
+<a class="btn btn-ink rv" href="https://www.behance.net/gallery/256863659/Policy-Aware-Corporate-Flight-Booking-UX-Case-Study" target="_blank" rel="noopener">Full case study on Behance ↗</a></section>
+</div></div><a class="next" href="channel-creation.html"><span class="mono">Next case study</span><div class="h-xl">Designing Channel Creation</div></a></div></main>
+<footer class="contact" style="padding-top:100px">
+  <div class="wrap">
+    <h2 class="h-xl rv">Like how I think? <em>Let's talk.</em></h2>
+    <a class="mail rv" href="mailto:bhardwajprashakha14@gmail.com">bhardwajprashakha14@gmail.com
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+    <div class="socials">
+      <a href="https://www.linkedin.com/in/prashakha-bhardwaj-ux/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a href="https://www.behance.net/prashakbhardwa" target="_blank" rel="noopener">Behance ↗</a>
+      <a href="../Prashakha-Bhardwaj-Resume.pdf" target="_blank" rel="noopener">Resume (PDF) ↗</a>
+    </div>
+    <div class="foot"><span>© <span id="year">2026</span> Prashakha Bhardwaj</span><a href="../index.html#work">← All work</a></div>
+  </div>
+</footer>
+<script src="../assets/site.js"></script>
+</body>
+</html>

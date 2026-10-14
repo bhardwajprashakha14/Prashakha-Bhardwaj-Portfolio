@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Designing Channel Creation | Prashakha Bhardwaj</title>
+<meta name="description" content="Case study on turning a one line requirement into a 150 field channel creation system for an enterprise OTT operator console.">
+<meta property="og:title" content="Designing Channel Creation">
+<meta property="og:description" content="Case study on turning a one line requirement into a 150 field channel creation system for an enterprise OTT operator console.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%23141413'/%3E%3Ctext x='16' y='22' font-family='Georgia' font-style='italic' font-size='18' fill='%23F4F2EE' text-anchor='middle'%3Ep%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+<header class="nav">
+  <div class="wrap">
+    <a href="../index.html" class="brand"><span class="mark">p</span>Prashakha Bhardwaj</a>
+    <nav class="nav-links" aria-label="Site">
+      <a href="../index.html#work">Work</a>
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#experience">Experience</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+    <a class="btn btn-line" href="../Prashakha-Bhardwaj-Resume.pdf" target="_blank" rel="noopener">Resume</a>
+  </div>
+</header>
+<main>
+<div class="cs-hero"><div class="wrap">
+<a class="back" href="../index.html#work">← All work</a>
+<div class="kicker rv"><b>Case study 01</b> Enterprise OTT operator console</div>
+<h1 class="h-xl rv">Designing Channel Creation from a <em>one line</em> requirement</h1>
+<p class="lede rv">The request was a single sentence. Over several months and more than twelve releases, it became a 150 field system that operators use to create, update and delete TV channels. I designed it together with Solution Architecture and Engineering.</p>
+<div class="cs-facts rv"><div><span>My role</span><b>UX designer, UX architect and UI designer</b></div><div><span>Team</span><b>Solution Architect, Solution Developer, Senior Developer</b></div><div><span>Scope</span><b>Create, update, delete, recordings and job tracking</b></div><div><span>Timeline</span><b>Several months, 12+ releases</b></div><div><span>Tools</span><b>Figma, FigJam, Jira, Confluence</b></div></div>
+<p class="cs-note rv"><b>Note</b><span>Client branding has been removed from all screens and the data shown is placeholder data. About 10 minutes to read.</span></p>
+<div class="cs-cover bg-plum rv">
+<img src="../assets/img/ch-listing.webp" alt="Channel listing" style="left:6%;top:12%;width:66%">
+<img src="../assets/img/ch-preview.webp" alt="Preview step" style="right:5%;top:8%;width:30%">
+</div>
+</div></div>
+<div class="wrap"><div class="cs"><nav class="toc" aria-label="On this page"><p>On this page</p><a href="#overview"><span>01</span>Overview</a><a href="#brief"><span>02</span>The brief</a><a href="#discovery"><span>03</span>Discovery</a><a href="#ia"><span>04</span>Information architecture</a><a href="#decisions"><span>05</span>Key decisions</a><a href="#flow"><span>06</span>User flow</a><a href="#creation"><span>07</span>Final design: creation</a><a href="#listing"><span>08</span>Final design: listing and saving</a><a href="#tracking"><span>09</span>Final design: job tracking</a><a href="#update"><span>10</span>Update flow</a><a href="#deletion"><span>11</span>Safe deletion</a><a href="#record"><span>12</span>Channel page</a><a href="#impact"><span>13</span>Impact</a><a href="#learnings"><span>14</span>Learnings</a></nav><div><section class="chap" id="overview"><div class="kicker rv"><b>01</b> Overview</div><h2 class="h2 rv">One sentence of brief. <em>150 fields</em> of real work.</h2>
+<div class="prose rv"><p>Channel Creation started with one line from the business: <strong>"We need to build channel creation."</strong> There was no spec, no field list and no earlier design to start from. Operators simply needed a way to launch a TV channel from inside the console.</p>
+<p>Over the next few months I worked closely with the Solution Architect, the Solution Developer and a Senior Developer to find and name every field a channel needs. New areas such as Bouquet Management and Catalogue linking appeared along the way. My job was to turn that growing list into something an operator could fill in without losing track.</p></div>
+<div class="own rv"><div><h5>What I owned</h5><ul><li>Field grouping and information architecture</li><li>The five step form, validation rules and the preview step</li><li>Listing, save safety and job tracking screens</li><li>The safe deletion flow and the recordings entry point</li><li>All UI, prototypes and developer handoff</li></ul></div><div><h5>What I did with the team</h5><ul><li>Finding and naming every field, in working sessions with Architecture and Engineering</li><li>Deciding which fields depend on others</li><li>Checking what the backend could support in each release</li></ul></div></div><div class="stats rv"><div><b>~150</b><span>fields found, named and grouped into five sections</span></div><div><b>1</b><span>form pattern shared by create and update</span></div><div><b>12+</b><span>releases without redesigning the core pattern</span></div></div></section>
+<section class="chap" id="brief"><div class="kicker rv"><b>02</b> The brief</div><h2 class="h2 rv">"We need channel creation." <em>That was all we had.</em></h2>
+<p class="lede rv">Nobody knew how many languages, delivery types or security rules a channel would need. On the first day, three questions had no answer.</p>
+<div class="cols  rv"><div class="cell"><span class="n">Open question 1</span><h4>Which fields matter?</h4><p>Metadata, delivery, security, monetisation and advertising were all still unlisted.</p></div><div class="cell"><span class="n">Open question 2</span><h4>Which fields depend on others?</h4><p>Some values only make sense after another field is set, and nobody had written that logic down.</p></div><div class="cell"><span class="n">Open question 3</span><h4>Where do sub features fit?</h4><p>Bouquet Management and Catalogue linking only came up once we mapped what a channel needs to go live.</p></div></div></section>
+<section class="chap" id="discovery"><div class="kicker rv"><b>03</b> Discovery</div><h2 class="h2 rv">Finding 150 fields, <em>one working session</em> at a time.</h2>
+<div class="prose rv"><p>I didn't do this alone. The Solution Architect, the Solution Developer and the Senior Developer sat with me for session after session. Each of them looked at the problem differently, and we only trusted the field list once all three agreed with it.</p></div>
+<div class="cols  rv"><div class="cell"><span class="n">Solution Architect</span><h4>System rules</h4><p>Explained the entitlement and delivery rules every field had to respect.</p></div><div class="cell"><span class="n">Solution Developer</span><h4>Data model</h4><p>Mapped the backend data models to the fields the form needed to capture.</p></div><div class="cell"><span class="n">Senior Developer</span><h4>Feasibility</h4><p>Checked what could be built and flagged dependent fields early.</p></div></div>
+<div class="prose rv"><p><strong>Areas that came up during discovery</strong></p></div>
+<div class="chips rv"><span class="chip">Bouquet management</span><span class="chip">Catalogue linking</span><span class="chip">Delivery configuration</span><span class="chip">Security and DRM</span><span class="chip">Enablers</span><span class="chip">Advertisement</span></div>
+<blockquote class="quote rv">150 fields can't sit in one form. The problem needed structure first.<cite>How I framed it for the team</cite></blockquote>
+<div class="prose rv"><p>Long forms usually fail in the same ways. People lose their place, errors pile up at the end, and people give up once they have to scroll instead of scan.</p></div></section>
+<section class="chap" id="ia"><div class="kicker rv"><b>04</b> Information architecture</div><h2 class="h2 rv">Every field got a home, <em>for a reason.</em></h2>
+<div class="prose rv"><p>I placed each field in the section it belonged to and ordered the sections the way operators think about a channel. First what the channel is, then how it is delivered, how it is protected, what features it has and how it earns money.</p></div>
+<div class="table-wrap rv"><table class="table">
+<tr><th>Step</th><th>Fields</th><th>What it covers</th></tr>
+<tr><td>Channel type</td><td>Entry</td><td>Commercial TV, Commercial Radio, FAST O&amp;O, FAST 3PP or App Launch Point</td></tr>
+<tr><td>1. General</td><td>~30</td><td>Names and descriptions in each language, dates, definition, category, images, offers, audience and catalogue</td></tr>
+<tr><td>2. Delivery</td><td>~35</td><td>Broadcast and OTT delivery, origin and streaming settings</td></tr>
+<tr><td>3. Security</td><td>~30</td><td>DRM, watermarking, entitlement and access rules</td></tr>
+<tr><td>4. Enablers</td><td>~20</td><td>Switches that turn channel features on or off</td></tr>
+<tr><td>5. Advertisement</td><td>~20</td><td>Ad insertion, monetisation and campaign settings</td></tr>
+<tr><td>Preview</td><td>Review</td><td>A read only summary of everything entered, shown before the channel is created</td></tr>
+</table></div>
+<p class="muted rv" style="font-size:14px">Field counts per section are approximate. The total in production is close to 150.</p></section>
+<section class="chap" id="decisions"><div class="kicker rv"><b>05</b> Key decisions</div><h2 class="h2 rv">Six decisions that made 150 fields <em>manageable.</em></h2><div class="cols  rv"><div class="cell"><span class="n">Decision 1</span><h4>Steps instead of one long form</h4><p>Each field lives in exactly one step, so operators finish one focused section at a time.</p></div><div class="cell"><span class="n">Decision 2</span><h4>Next stays disabled until the step is valid</h4><p>Operators can only move on when every required field is filled, so errors don't pile up at the end.</p></div><div class="cell"><span class="n">Decision 3</span><h4>Preview before submit</h4><p>A channel affects real viewers, so the last step is always a full read only review.</p></div><div class="cell"><span class="n">Decision 4</span><h4>Confirm before create</h4><p>Submitting from Preview asks once more, so nobody creates a channel by accident.</p></div><div class="cell"><span class="n">Decision 5</span><h4>Same pattern for update</h4><p>Updating a channel uses the same steps and preview, so there is nothing new to learn.</p></div><div class="cell"><span class="n">Decision 6</span><h4>Show only what is needed</h4><p>The saved channel page opens General and keeps the other sections collapsed.</p></div></div></section>
+<section class="chap" id="flow"><div class="kicker rv"><b>06</b> User flow</div><h2 class="h2 rv">From an empty list to a <em>live channel.</em></h2>
+<div class="flow-label rv">Create</div>
+<div class="flow rv"><span>Channel list</span><i>→</i><span>Add channel</span><i>→</i><span>Choose type</span><i>→</i><span>General</span><i>→</i><span>Delivery</span><i>→</i><span>Security</span><i>→</i><span>Enablers</span><i>→</i><span>Advertisement</span><i>→</i><span class="stop">Preview</span><i>→</i><span>Confirm</span><i>→</i><span class="good">Job tracked</span></div>
+<div class="flow-label rv">Delete</div>
+<div class="flow rv"><span>Delete</span><i>→</i><span class="bad">Still enabled? Blocked</span><i>→</i><span>Disable broadcast and OTT</span><i>→</i><span class="bad">Recordings exist? Blocked</span><i>→</i><span>Delete recordings</span><i>→</i><span class="good">Delete allowed</span></div></section>
+<section class="chap" id="creation"><div class="kicker rv"><b>07</b> Final design: creation</div><h2 class="h2 rv">Start simple. <em>Add detail step by step.</em></h2>
+<div class="pair"><figure class="rv"><div class="shot"><div class="chrome"><i></i><i></i><i></i></div><img src="../assets/img/ch-empty.webp" alt="Empty channel list with an Add Channel button" loading="lazy"></div></figure><figure class="rv"><div class="shot"><div class="chrome"><i></i><i></i><i></i></div><img src="../assets/img/ch-type.webp" alt="Choosing a channel type before the form opens" loading="lazy"></div></figure></div>
+<div class="prose rv"><p>The first screen is deliberately quiet, with one clear action. Operators choose the channel type first, so the form only shows the fields that apply to that type.</p></div>
+<figure class="rv"><div class="shot"><div class="chrome"><i></i><i></i><i></i></div><img src="../assets/img/ch-general.webp" alt="General step of the channel creation form" loading="lazy"></div><figcaption><b>A</b><span>The General step. Names and descriptions for six languages, dates, images and offers, grouped into labelled cards.</span></figcaption></figure><figure class="rv"><div class="shot"><div class="chrome"><i></i><i></i><i></i></div><img src="../assets/img/ch-general-catalogue.webp" alt="Catalogue selection table inside the General step" loading="lazy"></div><figcaption><b>B</b><span>Catalogue linking sits inside the General step as a filterable table, so operators never leave the flow to do it.</span></figcaption></figure><ol class="notes rv"><li><b>Progress is always visible</b>The tracker at the top shows the current step and what is left.</li><li><b>Fetch Metadata</b>Entering a Channel ID can fill in known details automatically.</li><li><b>Language grid</b>Six language fields side by side with character counts.</li><li><b>Next button</b>Stays disabled until the step is complete.</li></ol><figure class="rv"><div class="shot tall"><div class="chrome"><i></i><i></i><i></i></div><img src="../assets/img/ch-preview.webp" alt="Preview step showing all entered values as read only, with other sections collapsed" loading="lazy"></div><figcaption><b>C</b><span>The Preview step. Everything entered so far, read only, with the other sections collapsed until needed.</span></figcaption></figure></section>
+<section class="chap" id="listing"><div class="kicker rv"><b>08</b> Final design: listing and saving</div><h2 class="h2 rv">One table for every <em>distribution type.</em></h2>
+<div class="prose rv"><p>Channels are split into Commercial TV, Commercial Radio, FAST O&amp;O, FAST 3PP and App Launch Point. Each type gets its own tab, and the Broadcast and OTT columns are grouped so operators can see what is switched on at a glance.</p></div>
+<figure class="rv"><div class="shot"><div class="chrome"><i></i><i></i><i></i></div><img src="../assets/img/ch-listing.webp" alt="Channel listing with a tab for each distribution type and inline toggles" loading="lazy"></div></figure><ol class="notes rv"><li><b>Add Channel</b>Top right, in the same place as every other list in the console.</li><li><b>A tab per type</b>Each type gets its own table instead of one crowded list.</li><li><b>Toggles in the row</b>Enable, watermark and DRM can be changed without opening the channel.</li><li><b>Row actions</b>Edit, view, delete and save sit on each row.</li></ol>
+<div class="prose rv" style="margin-top:50px"><p><strong>Quick edits on a table of 400 channels are where mistakes happen.</strong> So I added two safeguards. Operators can't lose unsaved changes by navigating away, and every save asks for confirmation and names the exact channel being changed.</p></div>
+<figure class="rv"><div class="shot"><div class="chrome"><i></i><i></i><i></i></div><img src="../assets/img/ch-unsaved.webp" alt="Dialog warning about unsaved changes with Leave page and Stay on page buttons" loading="lazy"></div><figcaption><span>The safer choice, Stay on page, is the primary button.</span></figcaption></figure></section>
+<section class="chap" id="tracking"><div class="kicker rv"><b>09</b> Final design: job tracking</div><h2 class="h2 rv">Creating a channel takes time, <em>so the screen shows it.</em></h2>
+<div class="prose rv"><p>Every create, update and delete starts a backend job that can take a while. Instead of a spinner, each job gets a status that names its current stage: Merging, Transforming, Matching or Publishing.</p></div>
+<figure class="rv"><div class="shot"><div class="chrome"><i></i><i></i><i></i></div><img src="../assets/img/ch-ingestion.webp" alt="Channel job status list with completed, processing and failed jobs" loading="lazy"></div></figure><ol class="notes rv"><li><b>Instant confirmation</b>A message confirms the job has started before the page reloads.</li><li><b>Named stages</b>Operators can see exactly where each job is.</li><li><b>Start and end times</b>Support teams can answer "when did this go live?"</li><li><b>Failures link to details</b>A Details link opens the reason right there.</li></ol><figure class="rv"><div class="shot"><div class="chrome"><i></i><i></i><i></i></div><img src="../assets/img/ch-failure.webp" alt="Failed job details panel with channel ID, error code and failure reason" loading="lazy"></div><figcaption><span>The failure panel shows the IDs, the time window, an error code and the exact message from the backend.</span></figcaption></figure></section>
+<section class="chap" id="update"><div class="kicker rv"><b>10</b> Update flow</div><h2 class="h2 rv">Same steps, with <em>one extra job</em> for Preview.</h2>
+<div class="prose rv"><p>Updating a channel uses the same steps as creating one. The only difference is in Preview. It highlights the fields that changed since the last save, using the same colours as the audit comparison I designed separately.</p></div>
+<div class="cell rv" style="max-width:640px;margin:30px 0">
+<span class="n">Example of the update preview</span>
+<div class="table-wrap"><table class="table" style="margin:6px 0 0">
+<tr><td>Channel category</td><td><s style="color:var(--bad)">Music</s> → <span style="color:#2448C7">Kids</span></td></tr>
+<tr><td>Audio languages</td><td><span style="color:var(--ok)">Tamil added</span></td></tr>
+<tr><td>Definition</td><td>Ultra High Definition <span class="muted">(no change)</span></td></tr>
+</table></div></div></section>
+<section class="chap" id="deletion"><div class="kicker rv"><b>11</b> Safe deletion</div><h2 class="h2 rv">A channel with millions of viewers <em>needs a careful delete.</em></h2>
+<div class="prose rv"><p>If a channel was still switched on while being deleted, any viewer could start a recording at that moment. That recording would then point to a channel that no longer exists. So I designed deletion as a short sequence of checks instead of one click.</p></div>
+<div class="pair"><figure class="rv"><div class="shot"><div class="chrome"><i></i><i></i><i></i></div><img src="../assets/img/ch-disable.webp" alt="Delete blocked until the channel is disabled for Broadcast and OTT" loading="lazy"></div></figure><figure class="rv"><div class="shot"><div class="chrome"><i></i><i></i><i></i></div><img src="../assets/img/ch-recfirst.webp" alt="Delete blocked until all recordings for the channel are removed" loading="lazy"></div></figure></div>
+<div class="cols c2 rv"><div class="cell"><span class="n">Check 1</span><h4>Disable the channel first</h4><p>Turning off Broadcast and OTT stops new recordings from starting.</p></div><div class="cell"><span class="n">Check 2</span><h4>Remove recordings next</h4><p>Recordings must be deleted first so no data is left without a channel.</p></div></div><figure class="rv"><div class="shot"><div class="chrome"><i></i><i></i><i></i></div><img src="../assets/img/ch-recordings.webp" alt="All recordings for a channel with a Delete All button" loading="lazy"></div><figcaption><span>Recordings were added after launch and fit in as one more action on the channel.</span></figcaption></figure></section>
+<section class="chap" id="record"><div class="kicker rv"><b>12</b> Channel page</div><h2 class="h2 rv">150 fields saved, <em>but never all on screen at once.</em></h2>
+<div class="prose rv"><p>The saved channel page follows the same structure as the form. General Details is open by default and Delivery, Security, Advertisement and Videos stay collapsed. Recordings sits in the header, and Version History was later added next to it without changing the navigation.</p></div>
+<figure class="rv"><div class="shot tall"><div class="chrome"><i></i><i></i><i></i></div><img src="../assets/img/ch-detail.webp" alt="Channel details page with General Details open and other sections collapsed" loading="lazy"></div></figure></section>
+<section class="chap" id="impact"><div class="kicker rv"><b>13</b> Impact</div><h2 class="h2 rv">From a one line request to a system <em>that kept growing.</em></h2>
+<div class="prose rv"><p>This internal console had no product analytics, so these numbers come from Figma version history and release notes and were confirmed with Product and Engineering.</p></div>
+<div class="stats rv"><div><b>~150</b><span>fields found and grouped into five sections</span></div><div><b>1</b><span>form pattern for both create and update</span></div><div><b>12+</b><span>releases without redesigning the core pattern</span></div></div><div class="cols c4 rv"><div class="cell"><span class="n">Fewer errors</span><h4>Validation per step</h4><p>Incomplete steps can't move forward.</p></div><div class="cell"><span class="n">More confidence</span><h4>Review before saving</h4><p>Every create and update goes through a full preview.</p></div><div class="cell"><span class="n">Clear job status</span><h4>Visible backend work</h4><p>Operators see each job's stage instead of a spinner.</p></div><div class="cell"><span class="n">Room to grow</span><h4>New features fit in</h4><p>Recordings, deletion and update all reused the same pattern.</p></div></div></section>
+<section class="chap" id="learnings"><div class="kicker rv"><b>14</b> Learnings</div><h2 class="h2 rv">What this project <em>taught me.</em></h2><div class="cols c2 rv"><div class="cell"><span class="n">Lesson 1</span><h4>Discovery is design work</h4><p>Naming 150 fields with Architecture and Engineering was part of the UX. I couldn't design the form until we knew the scope.</p></div><div class="cell"><span class="n">Lesson 2</span><h4>Grouping matters more than count</h4><p>Once the fields were grouped well, the number of fields stopped being the problem.</p></div><div class="cell"><span class="n">Lesson 3</span><h4>Plan for change</h4><p>Treating create, update, delete and recordings as one pattern made every new requirement easier to add.</p></div><div class="cell"><span class="n">Lesson 4</span><h4>Design the edge cases as flows</h4><p>The disable before delete rule became a proper flow from the start, not a patch later.</p></div></div><blockquote class="quote rv">When the brief is one line, part of the job is designing the scope itself.</blockquote></section>
+</div></div><a class="next" href="audit-experience.html"><span class="mono">Next case study</span><div class="h-xl">Redesigning the audit experience</div></a></div></main>
+<footer class="contact" style="padding-top:100px">
+  <div class="wrap">
+    <h2 class="h-xl rv">Like how I think? <em>Let's talk.</em></h2>
+    <a class="mail rv" href="mailto:bhardwajprashakha14@gmail.com">bhardwajprashakha14@gmail.com
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+    <div class="socials">
+      <a href="https://www.linkedin.com/in/prashakha-bhardwaj-ux/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a href="https://www.behance.net/prashakbhardwa" target="_blank" rel="noopener">Behance ↗</a>
+      <a href="../Prashakha-Bhardwaj-Resume.pdf" target="_blank" rel="noopener">Resume (PDF) ↗</a>
+    </div>
+    <div class="foot"><span>© <span id="year">2026</span> Prashakha Bhardwaj</span><a href="../index.html#work">← All work</a></div>
+  </div>
+</footer>
+<script src="../assets/site.js"></script>
+</body>
+</html>

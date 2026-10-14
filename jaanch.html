@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jaanch: Lab Tests at Home | Prashakha Bhardwaj</title>
+<meta name="description" content="Concept case study for a home lab testing service across a patient app, website, ops console and collector app.">
+<meta property="og:title" content="Jaanch: Lab Tests at Home">
+<meta property="og:description" content="Concept case study for a home lab testing service across a patient app, website, ops console and collector app.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%23141413'/%3E%3Ctext x='16' y='22' font-family='Georgia' font-style='italic' font-size='18' fill='%23F4F2EE' text-anchor='middle'%3Ep%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+<header class="nav">
+  <div class="wrap">
+    <a href="../index.html" class="brand"><span class="mark">p</span>Prashakha Bhardwaj</a>
+    <nav class="nav-links" aria-label="Site">
+      <a href="../index.html#work">Work</a>
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#experience">Experience</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+    <a class="btn btn-line" href="../Prashakha-Bhardwaj-Resume.pdf" target="_blank" rel="noopener">Resume</a>
+  </div>
+</header>
+<main>
+<div class="cs-hero"><div class="wrap">
+<a class="back" href="../index.html#work">← All work</a>
+<div class="kicker rv"><b>Case study 03</b> Healthcare concept project</div>
+<h1 class="h-xl rv">Jaanch: lab tests at home, <em>without the guesswork</em></h1>
+<p class="lede rv">Booking a home lab test takes two minutes in most apps. The confusing part comes after. Jaanch is a concept for home sample collection in Jaipur, and I designed it around everything that happens after the booking.</p>
+<div class="cs-facts rv"><div><span>My role</span><b>Research, UX, UI, prototype and design system</b></div><div><span>Type</span><b>Self initiated concept</b></div><div><span>Platforms</span><b>Patient app, website, ops console and collector app</b></div><div><span>Timeline</span><b>4 weeks, October 2026</b></div><div><span>Tools</span><b>Figma, FigJam, Figma Make, Claude, ChatGPT</b></div></div>
+<p class="cs-note rv"><b>Note</b><span>This is a concept project with no client and no real users yet, so there are no outcome numbers. The personas are assumptions I would test in interviews. About 7 minutes to read.</span></p>
+<div class="cs-cover full bg-teal rv"><img src="../assets/img/jaanch-01-cover.webp" alt="Jaanch: lab tests at home, without the guesswork"></div>
+</div></div>
+<div class="wrap"><div class="cs"><nav class="toc" aria-label="On this page"><p>On this page</p><a href="#overview"><span>01</span>Overview</a><a href="#research"><span>02</span>Empathize</a><a href="#people"><span>03</span>People</a><a href="#define"><span>04</span>Define</a><a href="#strategy"><span>05</span>Strategy</a><a href="#system"><span>06</span>Design system</a><a href="#screens"><span>07</span>Final design</a><a href="#reflection"><span>08</span>Reflection</a></nav><div><section class="chap" id="overview"><div class="kicker rv"><b>01</b> Overview</div><h2 class="h2 rv">One booking, <em>four apps.</em></h2>
+<div class="prose rv"><p>Jaanch helps people book the tests their doctor asked for, prepare correctly, follow every test until its report is out, and recover quickly when a sample can't be used. The same booking is shared with the collector at the door and the lab team behind it.</p>
+<p>Usability testing with patients and collectors is the next step.</p></div>
+<div class="cols c4 rv"><div class="cell"><span class="n">Patient app</span><h4>Book, prepare and track</h4><p>Pick tests, see prep rules before choosing a slot, follow each test and get reports.</p></div><div class="cell"><span class="n">Patient website</span><h4>The same booking on a bigger screen</h4><p>The booking summary stays visible while you fill in details.</p></div><div class="cell"><span class="n">Ops console</span><h4>Who needs to act</h4><p>A queue for failed samples, delays and re visits, each with an owner.</p></div><div class="cell"><span class="n">Collector app</span><h4>Verify, scan and hand over</h4><p>Works offline at the patient's door.</p></div></div><div class="stats rv"><div><b>4</b><span>apps sharing one booking</span></div><div><b>68</b><span>screens in light and dark mode</span></div><div><b>30</b><span>components in the design system</span></div></div><figure class="rv"><div class="slide"><img src="../assets/img/jaanch-04-process-overview.webp" alt="Design process: empathize, define, strategy, design, reflection" loading="lazy"></div><figcaption><span>My process, based on the double diamond. I kept desk research and assumptions clearly separate.</span></figcaption></figure></section>
+<section class="chap" id="research"><div class="kicker rv"><b>02</b> Empathize</div><h2 class="h2 rv">Booking works well. <em>The rest needs help.</em></h2>
+<div class="prose rv"><p>I started with desk research, a review of existing lab test apps and an assumption map. Three insights shaped the rest of the project.</p></div>
+<div class="cols  rv"><div class="cell"><span class="n">Insight 1</span><h4>Booking is already easy</h4><p>Every big provider lets you search, book and download reports. That alone won't make anyone switch.</p></div><div class="cell"><span class="n">Insight 2</span><h4>Test names are confusing</h4><p>Prescriptions say TFT or FBS, or are handwritten, and patients can't match them to the app.</p></div><div class="cell"><span class="n">Insight 3</span><h4>Preparation decides the result</h4><p>Fasting tests need 8 to 12 hours without food, so a 6 PM slot for a fasting test doesn't work.</p></div></div><div class="pair"><figure class="rv"><div class="slide"><img src="../assets/img/jaanch-12-research-methods.webp" alt="Research methods" loading="lazy"></div></figure><figure class="rv"><div class="slide"><img src="../assets/img/jaanch-13-pattern-audit.webp" alt="Pattern audit of existing lab-test apps" loading="lazy"></div></figure></div></section>
+<section class="chap" id="people"><div class="kicker rv"><b>03</b> People</div><h2 class="h2 rv">Two people who feel <em>the same gap.</em></h2>
+<div class="prose rv"><p>I made two proto personas and marked them as assumptions to test. One is a patient who books for herself and her father. The other is a coordinator who hears about failed samples too late.</p></div>
+<div class="pair"><figure class="rv"><div class="slide"><img src="../assets/img/jaanch-14-persona-meera.webp" alt="Persona: Meera Sharma, 34, books tests for herself and her father" loading="lazy"></div></figure><figure class="rv"><div class="slide"><img src="../assets/img/jaanch-15-persona-anjali.webp" alt="Persona: Anjali Verma, 29, collection coordinator" loading="lazy"></div></figure></div>
+<blockquote class="quote rv">"When a sample fails, I find out late, and the patient finds out even later."<cite>Anjali, collection coordinator (proto persona)</cite></blockquote>
+<figure class="rv"><div class="slide"><img src="../assets/img/jaanch-18-journey-meera.webp" alt="Meera&#x27;s journey map from booking to report" loading="lazy"></div><figcaption><span>Meera feels unsure between booking and the collector's visit, and again when a sample fails.</span></figcaption></figure></section>
+<section class="chap" id="define"><div class="kicker rv"><b>04</b> Define</div><h2 class="h2 rv">People need to know <em>what happens next.</em></h2>
+<div class="prose rv"><p><strong>Goal.</strong> Help people book the right tests, prepare with confidence and follow each test until the report is ready. When a sample has to be taken again, there should be a clear path and a person responsible for it.</p></div>
+<div class="cols c4 rv"><div class="cell"><span class="n">How might we 1</span><h4>Book the right test</h4><p>Help people book the exact test without knowing medical names.</p></div><div class="cell"><span class="n">How might we 2</span><h4>Make prep hard to miss</h4><p>Make fasting and preparation rules impossible to overlook.</p></div><div class="cell"><span class="n">How might we 3</span><h4>Share bad news calmly</h4><p>Tell someone their sample failed without scaring them.</p></div><div class="cell"><span class="n">How might we 4</span><h4>Own every failure</h4><p>Make sure someone owns each failed sample until it is fixed.</p></div></div><figure class="rv"><div class="slide"><img src="../assets/img/jaanch-21-pain-points.webp" alt="Pain points across patient and operations" loading="lazy"></div></figure></section>
+<section class="chap" id="strategy"><div class="kicker rv"><b>05</b> Strategy</div><h2 class="h2 rv">Three ideas guided <em>every screen.</em></h2><div class="cols  rv"><div class="cell"><span class="n">Idea 1</span><h4>Show prep before the slot</h4><p>If fasting decides the time, people see fasting rules first and get a reminder the evening before.</p></div><div class="cell"><span class="n">Idea 2</span><h4>A status for each test</h4><p>A ready blood count is shown right away, even if the thyroid test is still running.</p></div><div class="cell"><span class="n">Idea 3</span><h4>Every failure has an owner</h4><p>A failed sample is assigned in the ops console, and the patient books a free re visit in two taps.</p></div></div><figure class="rv"><div class="slide"><img src="../assets/img/jaanch-26-design-principles.webp" alt="Six design principles" loading="lazy"></div><figcaption><span>Six principles I checked every screen against.</span></figcaption></figure><div class="pair"><figure class="rv"><div class="slide"><img src="../assets/img/jaanch-27-booking-flow.webp" alt="Booking flow" loading="lazy"></div></figure><figure class="rv"><div class="slide"><img src="../assets/img/jaanch-28-recovery-flow.webp" alt="Recovery flow for a failed sample" loading="lazy"></div></figure></div></section>
+<section class="chap" id="system"><div class="kicker rv"><b>06</b> Design system</div><h2 class="h2 rv">30 components in <em>light and dark.</em></h2>
+<div class="prose rv"><p>Tokens for colour, type, spacing and corner radius in both themes. Every status badge has a word as well as a colour.</p></div>
+<figure class="rv"><div class="slide"><img src="../assets/img/jaanch-31-design-system.webp" alt="Design system foundations" loading="lazy"></div></figure><figure class="rv"><div class="slide"><img src="../assets/img/jaanch-32-components-colour.webp" alt="Components and colour tokens" loading="lazy"></div></figure></section>
+<section class="chap" id="screens"><div class="kicker rv"><b>07</b> Final design</div><h2 class="h2 rv">The screens, <em>app by app.</em></h2><figure class="rv"><div class="slide"><img src="../assets/img/jaanch-33-screens-booking.webp" alt="Patient app booking screens" loading="lazy"></div><figcaption><span>Booking. Preparation rules appear before you choose a slot.</span></figcaption></figure><figure class="rv"><div class="slide"><img src="../assets/img/jaanch-34-screens-tracking.webp" alt="Tracking screens with a status per test" loading="lazy"></div><figcaption><span>Tracking. Each test has its own status and the time it was last updated.</span></figcaption></figure><figure class="rv"><div class="slide"><img src="../assets/img/jaanch-35-screens-recovery.webp" alt="Recovery screens for a failed sample" loading="lazy"></div><figcaption><span>Recovery. A calm explanation, a named person handling it and a free re visit in two taps.</span></figcaption></figure><figure class="rv"><div class="slide"><img src="../assets/img/jaanch-36-screens-web.webp" alt="Patient website" loading="lazy"></div><figcaption><span>Patient website. The same booking with a summary that stays on screen.</span></figcaption></figure><div class="pair"><figure class="rv"><div class="slide"><img src="../assets/img/jaanch-37-screens-ops.webp" alt="Ops console queue" loading="lazy"></div></figure><figure class="rv"><div class="slide"><img src="../assets/img/jaanch-38-screens-collector.webp" alt="Collector app" loading="lazy"></div></figure></div><div class="pair"><figure class="rv"><div class="slide"><img src="../assets/img/jaanch-39-dark-mode.webp" alt="Dark mode" loading="lazy"></div></figure><figure class="rv"><div class="slide"><img src="../assets/img/jaanch-40-edge-states.webp" alt="Edge and empty states" loading="lazy"></div></figure></div></section>
+<section class="chap" id="reflection"><div class="kicker rv"><b>08</b> Reflection</div><h2 class="h2 rv">What I'd test <em>first.</em></h2>
+<div class="prose rv"><p>All of this is still a hypothesis until real patients and collectors try it. My test plan starts with the two riskiest questions. Can people find the right test from a prescription? And does the failed sample message feel reassuring?</p></div>
+<div class="pair"><figure class="rv"><div class="slide"><img src="../assets/img/jaanch-42-usability-test-plan.webp" alt="Usability test plan" loading="lazy"></div></figure><figure class="rv"><div class="slide"><img src="../assets/img/jaanch-43-takeaways.webp" alt="Takeaways" loading="lazy"></div></figure></div>
+<blockquote class="quote rv">The booking is the easy part. The real design work is in what comes after.</blockquote>
+<a class="btn btn-ink rv" href="https://www.behance.net/gallery/257081867/Jaanch-Lab-Tests-at-Home-UX-Case-Study" target="_blank" rel="noopener">See all 44 slides on Behance ↗</a></section>
+</div></div><a class="next" href="corporate-flight-booking.html"><span class="mono">Next case study</span><div class="h-xl">Policy aware corporate flight booking</div></a></div></main>
+<footer class="contact" style="padding-top:100px">
+  <div class="wrap">
+    <h2 class="h-xl rv">Like how I think? <em>Let's talk.</em></h2>
+    <a class="mail rv" href="mailto:bhardwajprashakha14@gmail.com">bhardwajprashakha14@gmail.com
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+    <div class="socials">
+      <a href="https://www.linkedin.com/in/prashakha-bhardwaj-ux/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a href="https://www.behance.net/prashakbhardwa" target="_blank" rel="noopener">Behance ↗</a>
+      <a href="../Prashakha-Bhardwaj-Resume.pdf" target="_blank" rel="noopener">Resume (PDF) ↗</a>
+    </div>
+    <div class="foot"><span>© <span id="year">2026</span> Prashakha Bhardwaj</span><a href="../index.html#work">← All work</a></div>
+  </div>
+</footer>
+<script src="../assets/site.js"></script>
+</body>
+</html>
