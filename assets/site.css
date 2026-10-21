@@ -444,3 +444,24 @@ body.lb-lock{overflow:hidden}
 .flow{gap:10px 24px}
 .flow li{position:relative}
 .flow li+li::before{position:absolute;left:-19px;top:50%;transform:translateY(-50%);margin:0}
+/* design iteration (before / after copy) */
+.iter{margin:34px 0;padding:24px 26px;border:1px solid var(--line);border-radius:var(--r);background:var(--card);max-width:80ch}
+.iter-label{display:flex;flex-wrap:wrap;align-items:center;gap:10px;font-size:14px;color:var(--ink-3);margin:0 0 16px}
+.iter-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.iter-grid>div{padding:16px 18px;border-radius:10px}
+.iter-old{background:#F6EDEA}.iter-new{background:#EAF2EC}
+.iter-grid b{display:block;font-family:var(--mono);font-weight:400;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);margin-bottom:6px}
+.iter-grid p{margin:0;font-size:15.5px;color:var(--ink)}
+.iter-old p{text-decoration:line-through;text-decoration-color:rgba(192,53,43,.6);color:var(--ink-2)}
+.iter-why{margin:16px 0 0;font-size:15px;color:var(--ink-2)}
+@media(max-width:640px){.iter-grid{grid-template-columns:1fr}}
+/* homepage: tighter hero → work */
+.hero{padding-bottom:28px}
+#work{padding-top:56px}
+#work .sec-head{margin-bottom:36px}
+@media(max-width:720px){#work{padding-top:40px}.hero{padding-bottom:16px}}
+.hero{padding-top:112px}
+.status{margin-top:28px}
+#work{padding-top:48px}
+#work .h2{font-size:clamp(32px,3.6vw,48px)}
+@media(max-width:720px){.hero{padding-top:96px}}
